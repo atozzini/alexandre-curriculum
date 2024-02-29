@@ -1,9 +1,9 @@
 import dot from 'dot-object';
 
 import en from './en';
-import fr from './fr';
-import ja from './ja';
+import pt from './pt';
+import de from './de';
 
-const languages = { en: dot.dot(en), fr: dot.dot(fr), ja: dot.dot(ja) };
+const languages = { en: dot.dot(en), pt: dot.dot(pt), de: dot.dot(de) };
 
 export default languages;

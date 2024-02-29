@@ -8,8 +8,8 @@ import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
-import fr from 'react-intl/locale-data/fr';
-import ja from 'react-intl/locale-data/ja';
+import pt from 'react-intl/locale-data/pt';
+import de from 'react-intl/locale-data/de';
 
 import languages from './i18n';
 
@@ -23,7 +23,7 @@ import Meta from './containers/Meta/Meta';
 import { changeLanguage } from './actions';
 import { history } from './store/configureStore';
 
-addLocaleData([...en, ...fr, ...ja]);
+addLocaleData([...en, ...pt, ...de]);
 
 const theme = createMuiTheme({
   palette: {
@@ -33,7 +33,7 @@ const theme = createMuiTheme({
 });
 
 export const App = ({ currentLanguage, onChangeLanguage }) => {
-  const defaultLanguage = process.env.REACT_APP_LOCALE || 'ja';
+  const defaultLanguage = process.env.REACT_APP_LOCALE || 'de';
   const locale = currentLanguage || defaultLanguage;
 
   return (
@@ -55,15 +55,15 @@ export const App = ({ currentLanguage, onChangeLanguage }) => {
               <IntlRoute
                 exact
                 onChangeLanguage={onChangeLanguage}
-                language="fr"
-                path="/fr/cv.html"
+                language="pt"
+                path="/pt/cv.html"
                 component={ResumeScreen}
               />
               <IntlRoute
                 exact
                 onChangeLanguage={onChangeLanguage}
-                language="ja"
-                path="/ja/rirekisho.html"
+                language="de"
+                path="/de/rirekisho.html"
                 component={ResumeScreen}
               />
               <IntlRoute

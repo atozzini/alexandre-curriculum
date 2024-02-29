@@ -8,12 +8,12 @@ RUN yarn install
 COPY ./ /app/
 
 # Build each versions
-RUN REACT_APP_LOCALE=ja yarn build
-RUN mv build build_ja
+RUN REACT_APP_LOCALE=de yarn build
+RUN mv build build_de
 RUN REACT_APP_LOCALE=en yarn build
 RUN mv build build_en
 RUN yarn build
-RUN mv build_ja build/ja
+RUN mv build_de build/de
 RUN mv build_en build/en
 
 # Stage 1 - Package compiled app in Nginx

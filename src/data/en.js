@@ -8,7 +8,7 @@ export default {
   firstName: 'Alexandre',
   lastName: 'Tozzini',
   emailAddress: 'tozzini.alexandre@gmail.com',
-  headline: 'Full-stack web engineer in Lyon',
+  headline: 'Full-stack software engineer in Brazil',
   summary: `
     Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces.<br /><br />
     Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1.<br /><br />My favourite stack : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.
@@ -67,7 +67,7 @@ export default {
   ],
   positions: [
     {
-      title: 'Full-stack web engineer',
+      title: 'Full-stack software engineer',
       summary:
         'PHP/MySQL/Javascript development<br />Laravel 5 | Vuejs | ReactJS | Docker | CI',
       startDate: '2018',
@@ -76,7 +76,7 @@ export default {
       company: 'Iscab',
     },
     {
-      title: 'Full-stack web engineer',
+      title: 'Full-stack software engineer',
       summary:
         'PHP/MySQL/Javascript development<br />Symfony 4 | ReactJS | Docker | CI',
       startDate: '2018',
@@ -85,7 +85,7 @@ export default {
       company: 'Finkey',
     },
     {
-      title: 'Full-stack web engineer',
+      title: 'Full-stack software engineer',
       summary:
         'PHP/MySQL/Javascript development<br />Laravel 5 | Symfony 3 | Vuejs | ReactJS | Docker | CI | Apache Cordova',
       startDate: '2010',

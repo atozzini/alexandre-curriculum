@@ -156,7 +156,7 @@ Resume.defaultProps = {
   firstName: 'Alexandre',
   lastName: 'Tozzini',
   emailAddress: 'alexandretozzini@gmail.com',
-  headline: 'Full-stack developer',
+  headline: 'Full-stack software engineer',
   summary:
     '♥ Microservice architecture lover ♥<br>Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces. Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1. My favourite stack : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.',
   pictureUrl:

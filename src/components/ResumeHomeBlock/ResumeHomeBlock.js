@@ -15,7 +15,7 @@ export const ResumeHomeBlock = ({ style, shortFullName, headline }) => (
         <h1>
           <FormattedMessage
             id="Resume.im"
-            defaultMessage="I'm {fullName}"
+            defaultMessage="{fullName}"
             values={{ fullName: shortFullName }}
           />
         </h1>

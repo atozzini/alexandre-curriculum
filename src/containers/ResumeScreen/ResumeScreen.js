@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import cvFR from '../../data/fr';
-import cvJA from '../../data/ja';
+import cvPT from '../../data/pt';
+import cvDE from '../../data/de';
 import cvEN from '../../data/en';
 import customers from '../../data/customers.json';
-import cvPDFFR from '../../data/fr.pdf';
-import cvPDFJA from '../../data/ja.pdf';
+import cvPDFPT from '../../data/pt.pdf';
+import cvPDFDE from '../../data/de.pdf';
 import cvPDFEN from '../../data/en.pdf';
 import Resume from '../Resume/Resume';
 
 class ResumeScreen extends Component {
   componentWillMount() {
     this.setState({
-      cvs: { fr: cvFR, ja: cvJA, en: cvEN },
-      cvPDFs: { fr: cvPDFFR, ja: cvPDFJA, en: cvPDFEN },
+      cvs: { pt: cvPT, de: cvDE, en: cvEN },
+      cvPDFs: { pt: cvPDFPT, de: cvPDFDE, en: cvPDFEN },
     });
   }
 

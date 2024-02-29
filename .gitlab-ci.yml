@@ -61,12 +61,12 @@ review:
   script:
     # Build
     - echo "Review URL / $REVIEW_URL"
-    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
-    - mv build build_ja
+    - REACT_APP_LOCALE=de yarn build && yarn local-analytics
+    - mv build build_de
     - REACT_APP_LOCALE=en yarn build && yarn local-analytics
     - mv build build_en
     - yarn build
-    - mv build_ja build/ja
+    - mv build_de build/de
     - mv build_en build/en
 
     # Add ssh key
@@ -117,12 +117,12 @@ staging:
     - yarn
   script:
     # Build
-    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
-    - mv build build_ja
+    - REACT_APP_LOCALE=de yarn build && yarn local-analytics
+    - mv build build_de
     - REACT_APP_LOCALE=en yarn build && yarn local-analytics
     - mv build build_en
     - yarn build
-    - mv build_ja build/ja
+    - mv build_de build/de
     - mv build_en build/en
 
     # Add ssh key
@@ -171,13 +171,13 @@ pages:
   before_script:
     - yarn
   script:
-    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
-    - mv build build_ja
+    - REACT_APP_LOCALE=de yarn build && yarn local-analytics
+    - mv build build_de
     - REACT_APP_LOCALE=en yarn build && yarn local-analytics
     - mv build build_en
     - mv public oldpublic
     - mkdir public/
-    - mv build_ja public/ja
+    - mv build_de public/de
     - mv build_en public/en
     - cp public/en/404.html public/404.html
   artifacts:

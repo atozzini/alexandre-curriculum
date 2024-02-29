@@ -1,8 +1,8 @@
 import React from 'react';
 
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import LaravelIcon from 'react-devicon/laravel/plain';
-import PhpIcon from 'react-devicon/php/plain';
+import IconGit from 'react-devicon/git/plain'
+import IconPython from 'react-devicon/python/plain'
 import ReactIcon from 'react-devicon/react/original';
 import RubyIcon from 'react-devicon/ruby/plain';
 import RailsIcon from 'react-devicon/rails/plain';
@@ -20,7 +20,7 @@ const theme = {
       color: '#fff',
     },
     className: 'vertical-timeline-element--laravel',
-    icon: <LaravelIcon />,
+    icon: <IconGit />,
   },
   phpColor: {
     style: {
@@ -28,7 +28,7 @@ const theme = {
       color: '#fff',
     },
     className: 'vertical-timeline-element--php',
-    icon: <PhpIcon />,
+    icon: <IconPython />,
   },
   reactColor: {
     style: {
