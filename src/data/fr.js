@@ -1,13 +1,13 @@
 export default {
   meta: {
-    title: 'CV - Stéphane Monnot : développeur web à Lyon',
+    title: 'CV - Alexandre Tozzini : développeur web à Lyon',
     keywords: 'Osaka, React, PHP, Laravel',
     description:
-      'Stéphane Monnot, Expert en développement web à Osaka, Japon. Spécialités : HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design.',
+      'Alexandre Tozzini, Expert en développement web à Osaka, Japon. Spécialités : HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design.',
   },
-  firstName: 'Stéphane',
-  lastName: 'Monnot',
-  emailAddress: 'monnot.stephane@gmail.com',
+  firstName: 'Alexandre',
+  lastName: 'Tozzini',
+  emailAddress: 'tozzini.alexandre@gmail.com',
   headline: 'Ingénieur full-stack web à Lyon',
   summary: `
     Ingénieur full-stack web & intervenant / formateur dans le domaine du web.<br />
@@ -20,7 +20,7 @@ export default {
   websites: [
     {
       type: 'Linkedin',
-      url: 'https://www.linkedin.com/in/monnotnakatsuji/',
+      url: 'https://www.linkedin.com/in/tozzininakatsuji/',
     },
   ],
   phoneNumbers: [
@@ -40,19 +40,19 @@ export default {
     },
     {
       type: 'Skype',
-      name: 'monnot.stephane',
+      name: 'tozzini.alexandre',
     },
   ],
   snsAccounts: [
     {
       name: 'Linkedin',
       icon: 'linkedin',
-      url: 'https://www.linkedin.com/in/monnotstephane/',
+      url: 'https://www.linkedin.com/in/tozzinialexandre/',
     },
     {
       name: 'Github',
       icon: 'github',
-      url: 'https://github.com/stephane-monnot',
+      url: 'https://github.com/alexandre-tozzini',
     },
   ],
   locations: [
@@ -176,7 +176,7 @@ export default {
       ],
       summary: `
         Développement de différents projets Web et mobile. Du simple site vitrine, en passant par des applications mobiles, API, application Frontend.<br />
-        Aussi consultant/sous-traitant sur plusieurs projets plus ou moins techniques comme par exemple : 
+        Aussi consultant/sous-traitant sur plusieurs projets plus ou moins techniques comme par exemple :
       `,
       more: `
         <ul>
@@ -207,7 +207,7 @@ export default {
       ],
       summary: `
         Interventions dans le développement web et plus précisément sur les technologies PHP/MySQL afin d'appréhender le développement web.<br />
-        La formation comprenait : 
+        La formation comprenait :
       `,
       more: `
         <ul>
@@ -613,11 +613,11 @@ export default {
       subcategory: 'react',
       links: [
         {
-          url: 'https://stephanemonnot.com/404.html',
+          url: 'https://alexandretozzini.com/404.html',
           text: 'Voir une démo',
         },
         {
-          url: 'https://github.com/stephane-monnot/react-fake-code-typing',
+          url: 'https://github.com/alexandre-tozzini/react-fake-code-typing',
           text: 'Voir les sources',
         },
       ],
@@ -738,7 +738,7 @@ export default {
           text: 'Visit website',
         },
         {
-          url: 'https://github.com/stephane-monnot/penpals-frontend',
+          url: 'https://github.com/alexandre-tozzini/penpals-frontend',
           text: 'View source code',
         },
       ],
@@ -763,7 +763,7 @@ export default {
       subcategory: 'rails',
       links: [
         {
-          url: 'https://github.com/stephane-monnot/penpals-backend',
+          url: 'https://github.com/alexandre-tozzini/penpals-backend',
           text: 'Voir les sources',
         },
       ],
@@ -791,11 +791,11 @@ export default {
       subcategory: 'react',
       links: [
         {
-          url: 'https://stephane-monnot.github.io/react-vertical-timeline/',
+          url: 'https://alexandre-tozzini.github.io/react-vertical-timeline/',
           text: 'Visitez le site',
         },
         {
-          url: 'https://github.com/stephane-monnot/react-vertical-timeline',
+          url: 'https://github.com/alexandre-tozzini/react-vertical-timeline',
           text: 'Voir les sources',
         },
       ],
@@ -814,11 +814,11 @@ export default {
       subcategory: 'react',
       links: [
         {
-          url: 'https://stephanemonnot.com/',
+          url: 'https://alexandretozzini.com/',
           text: 'Visitez le site',
         },
         {
-          url: 'https://github.com/stephane-monnot/resume',
+          url: 'https://github.com/alexandre-tozzini/resume',
           text: 'Voir les sources',
         },
       ],
@@ -869,7 +869,7 @@ export default {
       links: [
         {
           url:
-            'https://github.com/hootlex/laravel-friendships/commits?author=stephane-monnot',
+            'https://github.com/hootlex/laravel-friendships/commits?author=alexandre-tozzini',
           text: 'Voir les commits',
         },
       ],
@@ -895,7 +895,7 @@ export default {
       subcategory: 'php',
       links: [
         {
-          url: 'https://github.com/stephane-monnot/db-user',
+          url: 'https://github.com/alexandre-tozzini/db-user',
           text: 'Voir les sources',
         },
       ],
@@ -918,7 +918,7 @@ export default {
       subcategory: 'php',
       links: [
         {
-          url: 'https://github.com/stephane-monnot/gocr-php',
+          url: 'https://github.com/alexandre-tozzini/gocr-php',
           text: 'Voir les sources',
         },
       ],

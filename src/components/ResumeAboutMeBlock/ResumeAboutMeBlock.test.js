@@ -14,8 +14,8 @@ it('renders without crashing', () => {
           fullName="Tozzini Alexandre"
           headline="Ingénieur full-stack web"
           summary="Ingénieur full-stack web & intervenant / formateur"
-          pictureUrl="https://stephanemonnot.com/share.png"
-          resumeUrl="https://stephanemonnot.com/static/media/en.6743b0e3.pdf"
+          pictureUrl="https://alexandretozzini.com/share.png"
+          resumeUrl="https://alexandretozzini.com/static/media/en.6743b0e3.pdf"
         />
       </MemoryRouter>
     </IntlProvider>,

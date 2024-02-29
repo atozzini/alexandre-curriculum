@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
 export const Meta = ({ location: { pathname }, locale }) => {
-  const mainDomain = 'https://stephanemonnot.com';
+  const mainDomain = 'https://alexandretozzini.com';
   const jaDomain = 'https://webエンジニア.com';
 
   let canonical = mainDomain;

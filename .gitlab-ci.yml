@@ -11,9 +11,9 @@ stages:
 variables:
   # Declare SSH_COMMAND: myuser@example.com
   # Declare BASIC_AUTH: myuser:mypass@ if need
-  APPS_DOMAIN: stephanemonnot.com
-  CONTAINER_TEST_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:$CI_COMMIT_REF_NAME
-  CONTAINER_RELEASE_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:latest
+  APPS_DOMAIN: alexandretozzini.com
+  CONTAINER_TEST_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/alexandretozzini:$CI_COMMIT_REF_NAME
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/alexandretozzini:latest
   REVIEW_URL: https://$BASIC_AUTH$CI_BUILD_REF_SLUG.$APPS_DOMAIN
 
 cache:

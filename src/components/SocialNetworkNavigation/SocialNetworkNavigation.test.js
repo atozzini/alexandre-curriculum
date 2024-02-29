@@ -12,12 +12,12 @@ it('renders without crashing', () => {
           {
             name: 'Linkedin',
             icon: 'linkedin',
-            url: 'https://www.linkedin.com/in/monnotstephane/',
+            url: 'https://www.linkedin.com/in/tozzinialexandre/',
           },
           {
             name: 'Github',
             icon: 'github',
-            url: 'https://github.com/stephane-monnot',
+            url: 'https://github.com/alexandre-tozzini',
           },
         ]}
       />

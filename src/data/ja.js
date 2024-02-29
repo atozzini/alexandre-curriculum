@@ -1,15 +1,15 @@
 export default {
   meta: {
-    title: '履歴書 - Stéphane Monnot : 大阪のフルスタックwebエンジニア',
+    title: '履歴書 - Alexandre Tozzini : 大阪のフルスタックwebエンジニア',
     keywords: 'Osaka, React, PHP, Laravel',
     description:
-      'Stéphane Monnot, 大阪のフルスタックwebエンジニア. 特技 : HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design.',
+      'Alexandre Tozzini, 大阪のフルスタックwebエンジニア. 特技 : HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design.',
   },
-  firstName: 'Stéphane',
+  firstName: 'Alexandre',
   firstNameKana: 'ステファン',
-  lastName: 'Monnot',
+  lastName: 'Tozzini',
   lastNameKana: 'モノ',
-  emailAddress: 'monnot.stephane@gmail.com',
+  emailAddress: 'tozzini.alexandre@gmail.com',
   headline: '大阪のフルスタックwebエンジニア',
   summary:
     'Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces.<br /><br />Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1.<br /><br />My favourite stack : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, React, ReactNative with continuous integration on Gitlab.',
@@ -19,7 +19,7 @@ export default {
   websites: [
     {
       type: 'Linkedin',
-      url: 'https://www.linkedin.com/in/monnotnakatsuji/',
+      url: 'https://www.linkedin.com/in/tozzininakatsuji/',
     },
   ],
   phoneNumbers: [
@@ -39,19 +39,19 @@ export default {
     },
     {
       type: 'Skype',
-      name: 'monnot.stephane',
+      name: 'tozzini.alexandre',
     },
   ],
   snsAccounts: [
     {
       name: 'Linkedin',
       icon: 'linkedin',
-      url: 'https://www.linkedin.com/in/monnotstephane/',
+      url: 'https://www.linkedin.com/in/tozzinialexandre/',
     },
     {
       name: 'Github',
       icon: 'github',
-      url: 'https://github.com/stephane-monnot',
+      url: 'https://github.com/alexandre-tozzini',
     },
   ],
   locations: [
@@ -416,11 +416,11 @@ export default {
       subcategory: 'react',
       links: [
         {
-          url: 'https://stephanemonnot.com/404.html',
+          url: 'https://alexandretozzini.com/404.html',
           text: 'View demo',
         },
         {
-          url: 'https://github.com/stephane-monnot/react-fake-code-typing',
+          url: 'https://github.com/alexandre-tozzini/react-fake-code-typing',
           text: 'View source code',
         },
       ],
@@ -537,7 +537,7 @@ export default {
           text: 'Visit website',
         },
         {
-          url: 'https://github.com/stephane-monnot/penpals-frontend',
+          url: 'https://github.com/alexandre-tozzini/penpals-frontend',
           text: 'View source code',
         },
       ],
@@ -562,7 +562,7 @@ export default {
       subcategory: 'rails',
       links: [
         {
-          url: 'https://github.com/stephane-monnot/penpals-backend',
+          url: 'https://github.com/alexandre-tozzini/penpals-backend',
           text: 'View source code',
         },
       ],
@@ -590,11 +590,11 @@ export default {
       subcategory: 'react',
       links: [
         {
-          url: 'https://stephane-monnot.github.io/react-vertical-timeline/',
+          url: 'https://alexandre-tozzini.github.io/react-vertical-timeline/',
           text: 'Visit website',
         },
         {
-          url: 'https://github.com/stephane-monnot/react-vertical-timeline',
+          url: 'https://github.com/alexandre-tozzini/react-vertical-timeline',
           text: 'View source code',
         },
       ],
@@ -613,11 +613,11 @@ export default {
       subcategory: 'react',
       links: [
         {
-          url: 'https://stephanemonnot.com/',
+          url: 'https://alexandretozzini.com/',
           text: 'Visit website',
         },
         {
-          url: 'https://github.com/stephane-monnot/resume',
+          url: 'https://github.com/alexandre-tozzini/resume',
           text: 'View source code',
         },
       ],
@@ -668,7 +668,7 @@ export default {
       links: [
         {
           url:
-            'https://github.com/hootlex/laravel-friendships/commits?author=stephane-monnot',
+            'https://github.com/hootlex/laravel-friendships/commits?author=alexandre-tozzini',
           text: 'View commits',
         },
       ],
@@ -694,7 +694,7 @@ export default {
       subcategory: 'php',
       links: [
         {
-          url: 'https://github.com/stephane-monnot/db-user',
+          url: 'https://github.com/alexandre-tozzini/db-user',
           text: 'View source code',
         },
       ],
@@ -717,7 +717,7 @@ export default {
       subcategory: 'php',
       links: [
         {
-          url: 'https://github.com/stephane-monnot/gocr-php',
+          url: 'https://github.com/alexandre-tozzini/gocr-php',
           text: 'View source code',
         },
       ],
