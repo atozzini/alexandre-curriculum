@@ -19,7 +19,7 @@ export default {
   websites: [
     {
       type: 'Linkedin',
-      url: 'https://www.linkedin.com/in/tozzininakatsuji/',
+      url: 'https://www.linkedin.com/in/alexandre-tozzini/',
     },
   ],
   phoneNumbers: [
@@ -46,12 +46,12 @@ export default {
     {
       name: 'Linkedin',
       icon: 'linkedin',
-      url: 'https://www.linkedin.com/in/tozzinialexandre/',
+      url: 'https://www.linkedin.com/in/alexandre-tozzini/',
     },
     {
       name: 'Github',
       icon: 'github',
-      url: 'https://github.com/alexandre-tozzini',
+      url: 'https://github.com/atozzini',
     },
   ],
   locations: [
