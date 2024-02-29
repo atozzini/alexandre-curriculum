@@ -1,41 +1,86 @@
 {
-  "name": "curriculo",
+  "name": "cv",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.2",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.9.1",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.1",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+    "@material-ui/core": "^1.4.2",
+    "@material-ui/icons": "^2.0.0",
+    "classnames": "^2.2.6",
+    "connected-react-router": "^4.3.0",
+    "dot-object": "^1.7.0",
+    "local-storage": "^1.4.2",
+    "prop-types": "^15.6.2",
+    "proxyquire": "^1.8.0",
+    "react": "^16.3.0",
+    "react-devicon": "^0.1.9",
+    "react-dom": "^16.0.0",
+    "react-fake-code-typing": "^1.1.0",
+    "react-ga": "^2.3.5",
+    "react-helmet": "^5.2.0",
+    "react-icons": "^2.2.7",
+    "react-intl": "^2.4.0",
+    "react-lazyload": "^2.6.2",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.13",
+    "react-scroll": "^1.5.5",
+    "react-scrollspy": "^3.3.3",
+    "react-syntax-highlighter": "^6.1.2",
+    "react-transition-group": "^2.2.1",
+    "react-vertical-timeline-component": "^2.0.0",
+    "react-visibility-sensor": "^3.10.1",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-saga": "^0.15.6",
+    "reselect": "^3.0.1",
+    "rewire": "^2.5.2",
+    "styled-components": "^2.2.0",
+    "velocity-react": "^1.4.1",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "fix-normalize-css-unit": "cross-env NODE_ENV=production babel --presets es2015 ./node_modules/normalize-css-unit/dist --out-dir ./node_modules/normalize-css-unit/dist",
+    "start": "node scripts/customized-config  start",
+    "build": "npm run fix-normalize-css-unit && node scripts/customized-config build && react-snap || true",
+    "local-analytics": "replace-in-file 'https://www.google-analytics.com/' '/' build/static/js/main.*.js build/**/*.html build/*.html",
+    "test": "node scripts/customized-config test --env=jsdom",
+    "lint": "npm run lint:eslint -- .",
+    "lint:eslint": "eslint --ignore-path .eslintignore",
+    "lint:staged": "lint-staged",
+    "eject": "node scripts/customized-config eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "lint-staged": {
+    "*.js": "yarn lint:eslint"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+  "pre-commit": "lint:staged",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-webpack": "^0.8.4",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "lint-staged": "^7.2.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.14.0",
+    "react-snap": "~1.10.0",
+    "replace-in-file": "^3.1.0",
+    "svg-inline-loader": "^0.8.0"
+  },
+  "reactSnap": {
+    "inlineCss": true,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
     ]
   }
 }
