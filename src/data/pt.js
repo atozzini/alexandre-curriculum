@@ -7,7 +7,7 @@ export default {
   },
   firstName: 'Alexandre',
   lastName: 'Tozzini',
-  emailAddress: 'tozzini.alexandre@gmail.com',
+  emailAddress: 'alexandretozzini@gmail.com',
   headline: 'Ingénieur full-stack web à Lyon',
   summary: `
     Ingénieur full-stack web & intervenant / formateur dans le domaine du web.<br />
@@ -40,7 +40,7 @@ export default {
     },
     {
       type: 'Skype',
-      name: 'tozzini.alexandre',
+      name: 'alexandre.tozzini',
     },
   ],
   snsAccounts: [

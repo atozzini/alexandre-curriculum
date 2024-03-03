@@ -3,19 +3,19 @@ export default {
     title: 'Resume - Alexandre Tozzini : web developer in Brazil',
     keywords: 'Brazil, React, Ruby, Rails',
     description:
-      'Alexandre Tozzini, web development expert in Osaka, Japan. Specialities: HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design.',
+      'Alexandre Tozzini, web development expert in Brazil. Specialities: HTML5, React, Redux, Ruby on Rails, Responsive Web Design.',
   },
   firstName: 'Alexandre',
   lastName: 'Tozzini',
-  emailAddress: 'tozzini.alexandre@gmail.com',
+  emailAddress: 'alexandretozzini@gmail.com',
   headline: 'Full-stack software engineer in Brazil',
   summary: `
-    Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces.<br /><br />
-    Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1.<br /><br />My favourite stack : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.
+    Tech  professional  with  10  years  of  experience,  including 8 months of leadership in agile teams using Scrum and Kanban.  Specialized  in  AWS (EC2,  RDS),  skilled  in  Jira, GitHub, Visual Code, Elasticsearch, Sidekiq, and  Docker.  Proficient  in  Ruby on Rails, React.js, and web  technologies  (JavaScript,  CSS,  HTML), with  strong  database expertise (SQL Server, PostgreSQL, Oracle 11g, MySql). Competent  in  Linux  (Debian, Ubuntu, Manjaro Arch) and advanced proficiency in Microsoft Office. Proven track  record in Public Education and Health projects, seeking developer roles for impactful projects.<br /><br />
+    My favourite stack : Ruby on Rails, Docker, ReactJS, Postgres.
   `,
   pictureUrl: 'me.jpg',
-  dateOfBirth: '1987-09-16',
-  mainAddress: 'Osaka, Japan',
+  dateOfBirth: '1985-04-06',
+  mainAddress: 'Mogi-Guaçu, Brazil',
   websites: [
     {
       type: 'Linkedin',
@@ -24,12 +24,8 @@ export default {
   ],
   phoneNumbers: [
     {
-      type: 'Work',
-      number: '+33 (0)7 82 69 27 69',
-    },
-    {
       type: 'Personal',
-      number: '+33 (0)6 73 83 21 42',
+      number: '+55 (19) 999 591 111',
     },
   ],
   imAccounts: [
@@ -39,7 +35,7 @@ export default {
     },
     {
       type: 'Skype',
-      name: 'tozzini.alexandre',
+      name: 'alexandre.tozzini',
     },
   ],
   snsAccounts: [
@@ -69,53 +65,62 @@ export default {
     {
       title: 'Full-stack software engineer',
       summary:
-        'PHP/MySQL/Javascript development<br />Laravel 5 | Vuejs | ReactJS | Docker | CI',
-      startDate: '2018',
+        'Ruby on Rails development<br />Javascript | ReactJS | CSS | Postgres | Docker',
+      startDate: 'Mar 2024',
       endDate: 'Today',
-      isCurrent: true,
-      company: 'Iscab',
+      isCurrent: false,
+      company: 'Apollus',
     },
     {
       title: 'Full-stack software engineer',
       summary:
-        'PHP/MySQL/Javascript development<br />Symfony 4 | ReactJS | Docker | CI',
-      startDate: '2018',
-      endDate: 'Today',
-      isCurrent: true,
-      company: 'Finkey',
+        'Ruby on Rails/Postgres development<br />Javascript | ExtJS | CSS | Nginx | ReactJS | Docker',
+      startDate: 'Jul 2023',
+      endDate: 'Fev 2024',
+      isCurrent: false,
+      company: 'Engefoto',
     },
     {
       title: 'Full-stack software engineer',
       summary:
-        'PHP/MySQL/Javascript development<br />Laravel 5 | Symfony 3 | Vuejs | ReactJS | Docker | CI | Apache Cordova',
-      startDate: '2010',
-      endDate: 'Today',
-      isCurrent: true,
-      company: 'NanokaWeb',
+        'Ruby on Rails development<br />ReactJS | Postgres | Docker | Scrum',
+      startDate: 'Oct 2022',
+      endDate: 'May 2023',
+      isCurrent: false,
+      company: 'Vindi',
     },
     {
-      title: 'Teacher',
+      title: 'Full-stack software engineer',
       summary:
-        'Intervened on the web development<br />PHP (Basics, OOP, Framework Laravel) | MySQL',
-      startDate: '2016',
-      endDate: '2018',
+        'Ruby on Rails development<br />Javascript | CSS | Postgres | Scrum | Docker | AWS(EC2, RDS)',
+      startDate: 'Dec 2020',
+      endDate: 'Oct 2022',
       isCurrent: false,
-      company: 'Sup’ La Mache',
+      company: 'Caiena',
     },
     {
-      title: 'Senior web dev & CTO / Lead developer',
+      title: 'Back End Developer',
       summary:
-        'PHP/MySQL/Javascript development <br />Solire Framework | Jquery | AngularJS',
-      startDate: '2009',
-      endDate: '2017',
+        'Ruby on Rails development<br />Postgres | Sidekik | Elasticsearch | Scrum | Javascript | CSS | Jasper Reports',
+      startDate: 'Jul 2017',
+      endDate: 'Nov 2020',
       isCurrent: false,
-      company: 'Solire',
+      company: 'Kazap',
+    },
+    {
+      title: 'Software Development Intern',
+      summary:
+        'Delphi development <br />Oracle 11g | Java | Scrum',
+      startDate: 'Feb 2016',
+      endDate: 'Jun 2017',
+      isCurrent: false,
+      company: 'CI&T',
     },
   ],
   interests: '',
   languages: [
     {
-      name: 'French',
+      name: 'Portuguese',
       level: 'Native',
       levelNumber: 10,
     },
@@ -125,14 +130,9 @@ export default {
       levelNumber: 6,
     },
     {
-      name: 'Japanese',
+      name: 'German',
       level: 'Professional working proficiency',
-      levelNumber: 6,
-    },
-    {
-      name: 'Korean',
-      level: 'Elementary proficiency',
-      levelNumber: 2,
+      levelNumber: 5,
     },
   ],
   skills: [

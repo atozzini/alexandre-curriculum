@@ -9,7 +9,7 @@ export default {
   firstNameKana: 'ステファン',
   lastName: 'Tozzini',
   lastNameKana: 'モノ',
-  emailAddress: 'tozzini.alexandre@gmail.com',
+  emailAddress: 'alexandretozzini@gmail.com',
   headline: '大阪のフルスタックwebエンジニア',
   summary:
     'Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces.<br /><br />Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1.<br /><br />My favourite stack : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, React, ReactNative with continuous integration on Gitlab.',
@@ -39,7 +39,7 @@ export default {
     },
     {
       type: 'Skype',
-      name: 'tozzini.alexandre',
+      name: 'alexandre.tozzini',
     },
   ],
   snsAccounts: [
