@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { VelocityTransitionGroup } from 'velocity-react';
-import Button from '@material-ui/core/Button';
-
-import './ShowMore.css';
+import Button from '@mui/material/Button';
 
 class ShowMore extends React.PureComponent {
   state = {

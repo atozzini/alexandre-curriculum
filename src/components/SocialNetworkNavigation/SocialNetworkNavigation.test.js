@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'next/link';
 import SocialNetworkNavigation from './SocialNetworkNavigation';
 
 it('renders without crashing', () => {

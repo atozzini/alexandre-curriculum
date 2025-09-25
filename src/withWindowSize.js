@@ -1,47 +1,31 @@
+// src/withWindowSize.js
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 function withWindowSize(WrappedComponent) {
   return class WindowSizeProvider extends React.Component {
-    componentWillMount() {
-      this.setState({
-        innerWidth: 1280,
-        innerHeight: 800,
-      });
-    }
+    state = {
+      innerWidth: 1280,
+      innerHeight: 800,
+    };
 
     componentDidMount() {
-      this.mounted = true;
       window.addEventListener('resize', this.onWindowResize);
       this.onWindowResize();
     }
 
     componentWillUnmount() {
-      this.mounted = false;
       window.removeEventListener('resize', this.onWindowResize);
     }
 
     onWindowResize = () => {
-      if (!this.mounted) return;
-
-      const node = ReactDOM.findDOMNode(this); // eslint-disable-line react/no-find-dom-node
-
       this.setState({
-        innerWidth: node.getBoundingClientRect().width,
-        innerHeight: node.getBoundingClientRect().height,
+        innerWidth: window.innerWidth,
+        innerHeight: window.innerHeight,
       });
     };
 
     render() {
-      return (
-        <WrappedComponent
-          ref={node => {
-            this.node = node;
-          }}
-          {...this.props}
-          {...this.state}
-        />
-      );
+      return <WrappedComponent {...this.props} {...this.state} />;
     }
   };
 }

@@ -1,36 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GithubIcon from 'react-icons/lib/fa/github';
-import LinkedinIcon from 'react-icons/lib/fa/linkedin-square';
-
-import './SocialNetworkNavigation.css';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const icons = {
-  github: {
-    element: <GithubIcon />,
-  },
-  linkedin: {
-    element: <LinkedinIcon />,
-  },
+  github: { element: <FaGithub /> },
+  linkedin: { element: <FaLinkedin /> },
 };
 
 const SocialNetworkNavigation = ({ services }) => (
   <div className="SocialNetworkNavigation">
-    {services.map(service => (
+    {(services || []).map((service) => (
       <a
         target="_blank"
-        key={service.url}
-        className={`SocialNetworkNavigation-link social-${service.icon}`}
-        href={service.url}
+        rel="noreferrer"
+        key={service?.url}
+        className={`SocialNetworkNavigation-link social-${service?.icon}`}
+        href={service?.url}
       >
-        {icons[service.icon].element}
+        {icons[service?.icon]?.element}
       </a>
     ))}
   </div>
 );
 
 SocialNetworkNavigation.propTypes = {
-  services: PropTypes.array.isRequired,
+  services: PropTypes.array,
+};
+
+SocialNetworkNavigation.defaultProps = {
+  services: [],
 };
 
 export default SocialNetworkNavigation;

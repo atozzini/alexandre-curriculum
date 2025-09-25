@@ -1,15 +1,24 @@
 export default {
   Resume: {
+    im: '{fullName}',
+    aboutMe: 'About me',
+    aboutMeSubtitle: 'A short introduction about myself',
     download: 'Download',
     hireMe: 'Hire me',
     workExperienceAndEducation: 'Work experience & Education',
-    years: ' years',
+    workExperienceAndEducationSubtitle:
+      'My work experiences and academic background.',
+    years: '{years, plural, =0 {0 years} one {# year} other {# years}}',
     year: ' year',
     skills: 'Skills',
+    skillsSubtitle: 'Technologies and areas where I feel confident',
     languages: 'Languages',
-    interests: 'Interests',
+    languagesSubtitle: 'Languages I speak',
+    interests: 'Hobbies',
+    interestsSubtitle: 'Activities I enjoy practicing',
     resume: 'Resume',
-    projectsAndDevelopments: 'Projects & developments',
+    tools: 'Tools',
+    toolsSubtitle: 'My favorite tools for daily work',
     showMore: 'Show more',
     showLess: 'Show less',
   },
@@ -18,7 +27,7 @@ export default {
     from: 'From',
     until: 'Until',
     days: 'Days',
-    Percent: 'Percent',
+    Percent: 'Percentage',
   },
   SimpleBottomNavigation: {
     aboutMe: 'About me',
@@ -28,6 +37,5 @@ export default {
     skills: 'Skills',
     languages: 'Languages',
     hobbies: 'Hobbies',
-    projects: 'Projects',
   },
 };

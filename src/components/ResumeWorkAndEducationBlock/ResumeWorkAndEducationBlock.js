@@ -1,24 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import SchoolIcon from '@material-ui/icons/School';
-import WorkIcon from '@material-ui/icons/Work';
+import SchoolIcon from '@mui/icons-material/School';
+import WorkIcon from '@mui/icons-material/Work';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 import VerticalTimeline from '../../components/VerticalTimeline/VerticalTimeline';
 import VerticalTimelineElement from '../../components/VerticalTimelineElement/VerticalTimelineElement';
 import ShowMore from '../../components/ShowMore/ShowMore';
 
-import './ResumeWorkAndEducationBlock.css';
-
 const formatPeriod = (start, end, formatMessage) => {
+  if (!start || !end) return '';
   const isToday = end === 'Today' || end === "Aujourd'hui" || end === '今';
 
   const period =
     (isToday ? new Date().getFullYear() : parseInt(end, 10)) -
     parseInt(start, 10);
 
-  if (period <= 1) {
+  if (isNaN(period) || period <= 1) {
     return `${start} – ${end}`;
   }
 
@@ -28,15 +27,13 @@ const formatPeriod = (start, end, formatMessage) => {
       defaultMessage:
         '{years, plural, =0 {0 year} one {# year} other {# years}}',
     },
-    {
-      years: period,
-    },
+    { years: period },
   )})`;
 };
 
 const ResumeWorkAndEducationBlock = ({
-  positions,
-  educations,
+  positions = [],
+  educations = [],
   workIconStyle,
   educationIconStyle,
   formatMessage,
@@ -59,45 +56,46 @@ const ResumeWorkAndEducationBlock = ({
       </div>
 
       <VerticalTimeline>
-        {positions.map((position, i) => {
-          let picture = null;
-          if (position.picture) {
-            picture = require(`../../data/img/${position.picture}`); // eslint-disable-line global-require
-          }
+        {(positions || []).map((position, i) => {
+          const picture = position?.picture ? `/img/${position.picture}` : null;
+
           return (
             <VerticalTimelineElement
               className="Resume-position"
-              key={i} // eslint-disable-line react/no-array-index-key
+              key={i}
               icon={<WorkIcon />}
               iconStyle={workIconStyle}
               date={formatPeriod(
-                position.startDate,
-                position.endDate,
+                position?.startDate,
+                position?.endDate,
                 formatMessage,
               )}
             >
               {picture && (
                 <img
                   className="ResumeWorkAndEducationBlock-picture"
-                  alt=""
+                  alt={position?.company || ''}
                   src={picture}
                 />
               )}
               <h3 className="vertical-timeline-element-title">
-                {position.title} @{position.company}
+                {position?.title || ''} @{position?.company || ''}
               </h3>
-              {position.keywords && (
+              {Array.isArray(position?.keywords) && (
                 <div className="ResumeWorkAndEducationBlock-keywords">
                   {position.keywords.map((keyword, j) => (
-                    <span key={j}> {keyword.name} </span> // eslint-disable-line react/no-array-index-key
+                    <span key={j}>{keyword?.name || ''}</span>
                   ))}
                 </div>
               )}
-              <p>
-                {/* eslint-disable-next-line react/no-danger */}
-                <span dangerouslySetInnerHTML={{ __html: position.summary }} />
-              </p>
-              {position.more && (
+              {position?.summary && (
+                <p>
+                  <span
+                    dangerouslySetInnerHTML={{ __html: position.summary }}
+                  />
+                </p>
+              )}
+              {position?.more && (
                 <ShowMore>
                   <p dangerouslySetInnerHTML={{ __html: position.more }} />
                 </ShowMore>
@@ -109,45 +107,49 @@ const ResumeWorkAndEducationBlock = ({
 
       <div id="Resume-education">
         <VerticalTimeline>
-          {educations.map((education, i) => (
+          {(educations || []).map((education, i) => (
             <VerticalTimelineElement
               position={i % 2 ? 'left' : 'right'}
-              id=""
               className="Resume-position"
-              key={i} // eslint-disable-line react/no-array-index-key
+              key={i}
               icon={<SchoolIcon />}
               iconStyle={educationIconStyle}
               date={formatPeriod(
-                education.startDate,
-                education.endDate,
+                education?.startDate,
+                education?.endDate,
                 formatMessage,
               )}
             >
               <h3 className="vertical-timeline-element-title">
-                {education.fieldOfStudy}
+                {education?.fieldOfStudy || ''}
               </h3>
               <h4 className="vertical-timeline-element-subtitle">
-                {education.degree}
+                {education?.degree || ''}
               </h4>
-              {education.activities &&
+
+              {education?.activities &&
                 !Array.isArray(education.activities) && (
                   <p>
                     <span
-                      /* eslint-disable-next-line react/no-danger */
-                      dangerouslySetInnerHTML={{ __html: education.activities }}
+                      dangerouslySetInnerHTML={{
+                        __html: education.activities,
+                      }}
                     />
                   </p>
                 )}
-              {education.activities &&
-                Array.isArray(education.activities) && (
-                  <div className="ResumeWorkAndEducationBlock-keywords">
-                    {education.activities.map((activity, j) => (
-                      <span key={j}> {activity.name} </span> // eslint-disable-line react/no-array-index-key
-                    ))}
-                  </div>
-                )}
-              {education.summary && (
-                <p dangerouslySetInnerHTML={{ __html: education.summary }} />
+
+              {Array.isArray(education?.activities) && (
+                <div className="ResumeWorkAndEducationBlock-keywords">
+                  {education.activities.map((activity, j) => (
+                    <span key={j}>{activity?.name || ''}</span>
+                  ))}
+                </div>
+              )}
+
+              {education?.summary && (
+                <p
+                  dangerouslySetInnerHTML={{ __html: education.summary }}
+                />
               )}
             </VerticalTimelineElement>
           ))}
@@ -160,9 +162,14 @@ const ResumeWorkAndEducationBlock = ({
 ResumeWorkAndEducationBlock.propTypes = {
   workIconStyle: PropTypes.object.isRequired,
   educationIconStyle: PropTypes.object.isRequired,
-  positions: PropTypes.array.isRequired,
-  educations: PropTypes.array.isRequired,
+  positions: PropTypes.array,
+  educations: PropTypes.array,
   formatMessage: PropTypes.func.isRequired,
+};
+
+ResumeWorkAndEducationBlock.defaultProps = {
+  positions: [],
+  educations: [],
 };
 
 export default ResumeWorkAndEducationBlock;

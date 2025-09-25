@@ -1,21 +1,21 @@
 export default {
   meta: {
-    title: '履歴書 - Alexandre Tozzini : 大阪のフルスタックwebエンジニア',
-    keywords: 'Osaka, React, PHP, Laravel',
+    title: 'Lebenslauf - Alexandre Tozzini : Full-Stack-Entwickler in Brasilien',
+    keywords: 'Brasilien, React, Ruby, Rails, Go, Oracle, PostgreSQL',
     description:
-      'Alexandre Tozzini, 大阪のフルスタックwebエンジニア. 特技 : HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design.',
+      'Alexandre Tozzini, Softwareentwickler in Brasilien. Spezialgebiete: Golang, Ruby on Rails, React, PL/SQL, PostgreSQL, Oracle.',
   },
   firstName: 'Alexandre',
-  firstNameKana: 'ステファン',
   lastName: 'Tozzini',
-  lastNameKana: 'モノ',
   emailAddress: 'alexandretozzini@gmail.com',
-  headline: '大阪のフルスタックwebエンジニア',
-  summary:
-    'Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces.<br /><br />Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1.<br /><br />My favourite stack : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, React, ReactNative with continuous integration on Gitlab.',
-  pictureUrl: 'me.jpg',
-  dateOfBirth: '1987-09-16',
-  mainAddress: '大阪市, 日本',
+  headline: 'Full-Stack Software Engineer',
+  summary: `
+    IT-Fachmann mit 10 Jahren Erfahrung, darunter 8 Monate Führung in agilen Teams mit Scrum und Kanban. Spezialisiert auf AWS (EC2, RDS), erfahren in Jira, GitHub, Visual Studio Code, Elasticsearch, Sidekiq und Docker. Versiert in Ruby on Rails, React.js und Webtechnologien (JavaScript, CSS, HTML) mit fundierter Datenbankexpertise (SQL Server, PostgreSQL, Oracle 11g, MySQL). Kompetent in Linux (Debian, Ubuntu, Manjaro Arch) und fortgeschrittene Kenntnisse in Microsoft Office. Nachgewiesene Erfolge in Projekten im Bildungs- und Gesundheitswesen, auf der Suche nach Rollen in Projekten mit echtem Einfluss und Wirkung.<br /><br />
+    Mein bevorzugter Stack: Ruby on Rails, Docker, ReactJS, Postgres.
+  `,
+  pictureUrl: '/img/me.jpg',
+  dateOfBirth: '1985-04-06',
+  mainAddress: 'Florianópolis, Santa Catarina, Brasilien',
   websites: [
     {
       type: 'Linkedin',
@@ -24,19 +24,11 @@ export default {
   ],
   phoneNumbers: [
     {
-      type: 'Work',
-      number: '+33 (0)6 73 83 21 42',
-    },
-    {
-      type: 'Personal',
-      number: '+33 (0)6 73 83 21 42',
+      type: 'Persönlich',
+      number: '+55 (19) 99959-1111',
     },
   ],
   imAccounts: [
-    {
-      type: 'Line',
-      name: 'shinbuntu',
-    },
     {
       type: 'Skype',
       name: 'alexandre.tozzini',
@@ -56,785 +48,305 @@ export default {
   ],
   locations: [
     {
-      name: 'Osaka',
-      country: 'Japan',
+      name: 'Florianópolis',
+      country: 'Brasilien',
       isCurrent: true,
     },
     {
-      name: 'Lyon',
-      country: 'France',
+      name: 'Mogi-Guaçu',
+      country: 'Brasilien',
     },
   ],
   positions: [
     {
-      title: 'フルスタックwebエンジニア',
-      summary:
-        'PHP/MySQL/Javascript development<br />Laravel 5 | Vuejs | ReactJS | Docker | CI',
-      startDate: '2018年',
-      endDate: '今',
+      title: 'IT Business Analyst',
+      keywords: [
+        { name: 'Golang' },
+        { name: 'Clean Architecture' },
+        { name: 'DDD' },
+        { name: 'Angular' },
+        { name: 'Oracle PL/SQL' },
+        { name: 'PostgreSQL' },
+      ],
+      summary: `
+        Entwicklung von Golang-APIs und Angular-Webanwendungen.<br />
+        Lösungen in Oracle PL/SQL und PostgreSQL.
+      `,
+      more: `
+        <p>
+          Tätigkeit in einer Pensionskasse mit Schwerpunkt auf Verwaltungssystemen.<br />
+          Verantwortlich für die Wartung von Altsystemen, Datenintegration und Benutzersupport.<br />
+          Einsatz von Docker, GitHub/Bitbucket, automatisierten Tests und agilen Methoden zur Sicherstellung der Qualität.
+        </p>
+      `,
+      startDate: '2025',
+      endDate: 'Heute',
       isCurrent: true,
-      company: 'Iscab',
+      company: 'PREVIG',
+      picture: 'logo-previg.png',
     },
     {
-      title: 'フルスタックwebエンジニア',
-      summary:
-        'PHP/MySQL/Javascript development<br />Symfony 4 | ReactJS | Docker | CI',
-      startDate: '2018年',
-      endDate: '今',
-      isCurrent: true,
-      company: 'Finkey',
-    },
-    {
-      title: 'フルスタックwebエンジニア',
-      summary:
-        'PHP/MySQL/Javascript development<br />Laravel 5 | Symfony 3 | Vuejs | React | Docker | CI | Apache Cordova',
-      startDate: '2010年',
-      endDate: '今',
-      isCurrent: true,
-      company: 'NanokaWeb',
-    },
-    {
-      title: '教員',
-      summary:
-        'Intervened on the web development<br />PHP (Basics, OOP, Framework Laravel) | MySQL',
-      startDate: '2016年',
-      endDate: '2018年',
+      title: 'Full-Stack Software Engineer',
+      keywords: [
+        { name: 'Ruby on Rails' },
+        { name: 'ReactJS' },
+        { name: 'Python' },
+        { name: 'PostgreSQL' },
+        { name: 'Docker' },
+        { name: 'AWS' },
+      ],
+      summary: `
+        Entwicklung mit Ruby on Rails und React.js in Gesundheitsprojekten.<br />
+        Backend in Rails mit PostgreSQL und AWS.
+      `,
+      more: `
+        <p>
+          Mitwirkung an Projekten im öffentlichen Gesundheitswesen.<br />
+          Einsatz von Docker und Überwachung mit Sentry.<br />
+          Verantwortung für robuste, skalierbare Lösungen im Backend und moderne Webschnittstellen.
+        </p>
+      `,
+      startDate: '2024',
+      endDate: '2024',
       isCurrent: false,
-      company: 'Sup’ La Mache',
+      company: 'Appolus Tecnologia',
+      picture: 'logo-appolus.png',
     },
     {
-      title: 'シニアwebエンジニア・CTO',
-      summary:
-        'PHP/MySQL/Javascript development <br />Solire Framework | Jquery | AngularJS',
-      startDate: '2009年',
-      endDate: '2017年',
+      title: 'Full-Stack Software Engineer',
+      keywords: [
+        { name: 'Ruby on Rails' },
+        { name: 'ExtJS' },
+        { name: 'ReactJS' },
+        { name: 'PostgreSQL' },
+        { name: 'Azure DevOps' },
+      ],
+      summary: `
+        Entwicklung von Lösungen für Stadtmanagement und Luftbildvermessung.<br />
+        Fokus auf Performanceoptimierung und Zusammenarbeit in agilen Projekten.
+      `,
+      more: `
+        <p>
+          Beitrag zu innovativen Projekten im Bereich Katasterverwaltung und Luftaufnahmen.<br />
+          Verantwortlich für Performanceverbesserungen und effektive Zusammenarbeit mit Microsoft DevOps.<br />
+          Aktive Teilnahme an Sprintplanung und Code-Reviews.
+        </p>
+      `,
+      startDate: '2023',
+      endDate: '2024',
       isCurrent: false,
-      company: 'Solire',
+      company: 'Engefoto',
+      picture: 'logo-engefoto.png',
+    },
+    {
+      title: 'Full-Stack Software Engineer',
+      keywords: [
+        { name: 'Ruby on Rails' },
+        { name: 'ReactJS' },
+        { name: 'RSpec' },
+      ],
+      summary: `
+        Entwicklung einer Online-Zahlungsplattform.<br />
+        Backend mit Ruby on Rails und Tests mit RSpec.
+      `,
+      more: `
+        <p>
+          Arbeit an der Plattform Vindi Pagamentos.<br />
+          Verantwortlich für Entwicklung im Backend (Rails) und Frontend (React.js).<br />
+          Nutzung von GitHub Projects für Aufgabenmanagement und Teamorganisation.
+        </p>
+      `,
+      startDate: '2022',
+      endDate: '2023',
+      isCurrent: false,
+      company: 'Vindi',
+      picture: 'logo-vindi.png',
+    },
+    {
+      title: 'Full-Stack Software Engineer',
+      keywords: [
+        { name: 'Ruby on Rails' },
+        { name: 'MySQL' },
+        { name: 'Redis' },
+        { name: 'TDD' },
+        { name: 'AWS' },
+      ],
+      summary: `
+        Entwicklung von Systemen für das öffentliche Bildungswesen.<br />
+        Backend mit Ruby on Rails, TDD mit RSpec.
+      `,
+      more: `
+        <p>
+          Nutzung von Redis zur Performanceverbesserung und AWS (EC2, RDS) für Infrastruktur.<br />
+          Verantwortlich für robuste und wartbare Systeme in einer agilen Umgebung.<br />
+          Beteiligung an fast zweijähriger kontinuierlicher Lieferung von Bildungssoftware.
+        </p>
+      `,
+      startDate: '2020',
+      endDate: '2022',
+      isCurrent: false,
+      company: 'Caiena',
+      picture: 'logo-caiena.png',
+    },
+    {
+      title: 'Back-End Developer',
+      keywords: [
+        { name: 'Ruby on Rails' },
+        { name: 'PostgreSQL' },
+        { name: 'Jasper Reports' },
+      ],
+      summary: `
+        Entwicklung von Projekten für das öffentliche Gesundheits- und Bildungswesen.<br />
+        Schwerpunkt auf PostgreSQL und erweiterte Berichte.
+      `,
+      more: `
+        <p>
+          Entwicklung von kritischen Funktionen und komplexen Berichten mit Jasper Reports.<br />
+          Einsatz agiler Methoden (Scrum/Kanban).<br />
+          Beitrag zur Lieferung innovativer Lösungen für den öffentlichen Sektor.
+        </p>
+      `,
+      startDate: '2017',
+      endDate: '2020',
+      isCurrent: false,
+      company: 'Kazap Tecnologia',
+      picture: 'logo-kazap.png',
+    },
+    {
+      title: 'Software Development Intern',
+      keywords: [
+        { name: 'Delphi' },
+        { name: 'Java' },
+        { name: 'Oracle 11g' },
+      ],
+      summary: `
+        Entwicklung interner Systeme für Hafenbetriebe.<br />
+        Praktische Erfahrung mit PL/SQL und Delphi.
+      `,
+      more: `
+        <p>
+          Einsatz von Oracle-Funktionen und Delphi in täglichen Prozessen.<br />
+          Anwendung agiler Methoden (Scrum/Kanban).<br />
+          Mitwirkung an stabilen internen Lösungen in einem dynamischen Umfeld.
+        </p>
+      `,
+      startDate: '2016',
+      endDate: '2017',
+      isCurrent: false,
+      company: 'CI&T',
+      picture: 'logo-cit.png',
     },
   ],
   interests: '',
   languages: [
-    {
-      name: 'フランス語',
-      level: '母国語',
-      levelNumber: 10,
-    },
-    {
-      name: '英語',
-      level: 'ビジネス初級',
-      levelNumber: 6,
-    },
-    {
-      name: '日本語',
-      level: 'ビジネス初級',
-      levelNumber: 6,
-    },
-    {
-      name: '韓国語',
-      level: '挨拶レベル',
-      levelNumber: 2,
-    },
+    { name: 'Portugiesisch', level: 'Muttersprache', levelNumber: 10 },
+    { name: 'Englisch', level: 'Berufliche Kenntnisse', levelNumber: 6 },
+    { name: 'Deutsch', level: 'Mittelstufe', levelNumber: 5 },
+    { name: 'Italienisch', level: 'Grundkenntnisse', levelNumber: 3 },
   ],
   skills: [
     {
-      name: 'Laravel 5',
-      language: {
-        name: 'PHP',
-        style: 'php',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'Symfony 2 & 3',
-      language: {
-        name: 'PHP',
-        style: 'php',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
       name: 'Ruby on Rails',
-      language: {
-        name: 'Ruby',
-        style: 'ruby',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'API development with Rails',
-      language: {
-        name: 'Ruby',
-        style: 'ruby',
-      },
-      category: {
-        name: 'Frameworks / SDK / CMS',
-      },
-    },
-    {
-      name: 'RSpec',
-      language: {
-        name: 'Ruby',
-        style: 'ruby',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
+      language: { name: 'Ruby', style: 'ruby' },
+      category: { name: 'Frameworks / SDK / CMS' },
     },
     {
       name: 'React',
-      language: {
-        name: 'Javascript',
-        style: 'javascript',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
+      language: { name: 'Javascript', style: 'javascript' },
+      category: { name: 'Frameworks / SDK / CMS' },
     },
     {
-      name: 'React Native',
-      language: {
-        name: 'Javascript',
-        style: 'javascript',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
+      name: 'Golang',
+      language: { name: 'Go', style: 'go' },
+      category: { name: 'Sprachen' },
     },
     {
-      name: 'Redux',
-      language: {
-        name: 'Javascript',
-        style: 'javascript',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
+      name: 'PL/SQL',
+      language: { name: 'SQL', style: 'others' },
+      category: { name: 'Sprachen' },
     },
     {
-      name: 'ES6',
-      language: {
-        name: 'Javascript',
-        style: 'javascript',
-      },
-      category: {
-        name: 'プログラミング言語',
-      },
-    },
-    {
-      name: 'Facebook SDK',
-      language: {
-        name: 'Javascript',
-        style: 'javascript',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'Facebook SDK',
-      language: {
-        name: 'PHP',
-        style: 'php',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'API',
-      language: {
-        name: 'PHP',
-        style: 'php',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'SQL (MYSQL, PostgreSQL, PostGIS)',
-      language: {
-        name: 'その他',
-        style: 'others',
-      },
-      category: {
-        name: 'プログラミング言語',
-      },
-    },
-    {
-      name: 'Continuous integration',
-      language: {
-        name: 'その他',
-        style: 'others',
-      },
-      category: {
-        name: 'プログラミング言語',
-      },
-    },
-    {
-      name: 'TDD',
-      language: {
-        name: 'その他',
-        style: 'others',
-      },
-      category: {
-        name: 'プログラミング言語',
-      },
-    },
-    {
-      name: 'HTML5/CSS3',
-      language: {
-        name: 'その他',
-        style: 'others',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'Bootstrap',
-      language: {
-        name: 'その他',
-        style: 'others',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'JQUERY',
-      language: {
-        name: 'Javascript',
-        style: 'javascript',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'Wordpress',
-      language: {
-        name: 'PHP',
-        style: 'php',
-      },
-      category: {
-        name: 'フレームワーク / SDK / CMS',
-      },
-    },
-    {
-      name: 'Linux',
-      category: {
-        name: 'ツール',
-      },
+      name: 'PostgreSQL',
+      language: { name: 'SQL', style: 'others' },
+      category: { name: 'Datenbanken' },
     },
     {
       name: 'Docker',
-      category: {
-        name: 'ツール',
-      },
+      category: { name: 'Werkzeuge' },
     },
     {
-      name: 'JIRA/Redmine',
-      category: {
-        name: 'ツール',
-      },
+      name: 'GitHub/GitLab/Bitbucket',
+      category: { name: 'Werkzeuge' },
     },
     {
-      name: 'GIT',
-      category: {
-        name: 'ツール',
-      },
-    },
-    {
-      name: 'Jenkins/Gitlab-CI',
-      category: {
-        name: 'ツール',
-      },
-    },
-    {
-      name: 'GITLAB/GITHUB',
-      category: {
-        name: 'ツール',
-      },
+      name: 'Scrum/Kanban',
+      category: { name: 'Agile Methoden' },
     },
   ],
   tools:
-    'オペレーティング システム: Linux(十年間以上)<br />統合開発環境: PhpStorm / RubyMine<br />コンテナ型: Docker / Rancher<br />継続的インテグレーションソフトウェア: Jenkins / Gitlab-CI / Travis<br />プロジェクト管理: Jira / Gitlab<br />コード管理: Gitlab / Github<br />',
+    'Betriebssysteme: Linux (über 10 Jahre)<br />IDE: VSCode / PhpStorm / RubyMine<br />Containerisierung: Docker<br />Continuous Integration: GitHub Actions / Gitlab-CI<br />Projektmanagement: Jira / Gitlab<br />Versionskontrolle: GitHub / Gitlab / Bitbucket',
   educations: [
     {
-      schoolName: 'Claude Bernard University Lyon 1',
-      fieldOfStudy: 'Metinet (Webプログラミング)',
-      startDate: '2009年',
-      endDate: '2010年',
-      degree: 'License',
-      activities:
-        'データベース, PHP, Flash, Java, 英語, コミュニケーション, Javascript',
+      schoolName: 'Faculdade VINCIT',
+      fieldOfStudy: 'MBA in Big Data und Datenmanagement-Intelligenz',
+      startDate: '2020',
+      endDate: '2023',
+      degree: 'MBA',
+      activities: [
+        { name: 'Big Data' },
+        { name: 'Künstliche Intelligenz' },
+        { name: 'Datenmanagement' },
+      ],
+      summary: 'Schwerpunkt auf Big-Data-Strategien für Managementanwendungen.',
     },
     {
-      schoolName: 'Joseph Marie Carriat',
-      fieldOfStudy: 'Business informatics',
-      startDate: '2007年',
-      endDate: '2009年',
-      degree: 'Brevet de technicien supérieur (BTS)',
-      activities: 'プログラミング, 英語, 数学, Management',
+      schoolName: 'Fatec Mogi Mirim',
+      fieldOfStudy: 'Technologie in Analyse und Entwicklung von Softwaresystemen',
+      startDate: '2014',
+      endDate: '2016',
+      degree: 'Bachelor',
+      activities: [
+        { name: 'Programmierung' },
+        { name: 'Datenbanken' },
+        { name: 'Systemanalyse' },
+      ],
+      summary: 'Technische Ausbildung mit Fokus auf Softwareentwicklung.',
+    },
+    {
+      schoolName: 'UNASP',
+      fieldOfStudy: 'Bauingenieurwesen (nicht abgeschlossen)',
+      startDate: '2007',
+      endDate: '2010',
+      degree: 'Bachelor',
+      activities: [
+        { name: 'Mathematik' },
+        { name: 'Physik' },
+        { name: 'Strukturen' },
+      ],
+      summary: 'Studium abgebrochen, um eine Karriere in der IT zu verfolgen.',
     },
   ],
-  projects: [
-    {
-      title: 'OVH provider for External DNS Rancher',
-      subtitle: 'GO Library',
-      category: 'library',
-      subcategory: 'go',
-      contribution: true,
-      links: [
-        {
-          url: 'https://github.com/rancher/external-dns/pull/105',
-          text: 'View source code',
-        },
-      ],
-      technologies: [
-        {
-          name: 'GO',
-        },
-        {
-          name: 'Rancher',
-        },
-      ],
-      content:
-        'Contributions to a Rancher library which gives the ability to update external DNS with records generated by Rancher.',
-      date: '2018-03-08',
-    },
-    {
-      title: 'React Fake Code Typing',
-      subtitle: 'React Component',
-      category: 'library',
-      subcategory: 'react',
-      links: [
-        {
-          url: 'https://alexandretozzini.com/404.html',
-          text: 'View demo',
-        },
-        {
-          url: 'https://github.com/alexandre-tozzini/react-fake-code-typing',
-          text: 'View source code',
-        },
-      ],
-      technologies: [
-        {
-          name: 'ReactJS',
-        },
-      ],
-      content: 'A react component to generate fake code typing.',
-      date: '2018-01-24',
-    },
-    {
-      title: 'Leo Pole Consulting SAS',
-      subtitle: 'WordPress Project',
-      category: 'project',
-      subcategory: 'wordpress',
-      links: [
-        {
-          url: 'http://leo-pole.fr/',
-          text: 'Visit website',
-        },
-      ],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'WordPress',
-        },
-        {
-          name: 'Multi-language',
-        },
-      ],
-      content:
-        'Showcase website of the Leo Pole Consulting SAS company built with WordPress in French and English.',
-      date: '2018-01-10',
-    },
-    {
-      title: 'Resume generator',
-      subtitle: 'Laravel Project',
-      category: 'project',
-      subcategory: 'laravel',
-      links: [],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Laravel',
-        },
-        {
-          name: 'Continuous deployment',
-        },
-      ],
-      content:
-        'Website which gives the ability to generate resume from a JSON. A resume is a combination of a PDF resume and a website resume in React.',
-      date: 'In progress',
-    },
-    {
-      title: 'MACSF LIBEA',
-      subtitle: 'Apache Cordova Project',
-      category: 'project',
-      subcategory: 'cordova',
-      links: [],
-      technologies: [
-        {
-          name: 'Apache Cordova',
-        },
-        {
-          name: 'IOS',
-        },
-        {
-          name: 'Android',
-        },
-      ],
-      content:
-        'Mobile application (IOS/Android) of the MACSF LIBEA insurance company which gives the ability to manage some services in the case of accident, such as finding taxi and workshop, sending invoices for reimbursement.',
-      date: '2017-12-15',
-    },
-    {
-      title: 'Saint-Fons JAZZ',
-      subtitle: 'Laravel Project',
-      category: 'project',
-      subcategory: 'laravel',
-      links: [
-        {
-          url: 'http://www.saint-fons-jazz.fr/',
-          text: 'Visit website',
-        },
-      ],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Laravel',
-        },
-        {
-          name: 'Continuous deployment',
-        },
-      ],
-      content:
-        'Website of the Saint-Fons Jazz school which gives the ability to book concerts and list meetings of Saint-Fons Jazz festival.',
-      date: '2017-12-08',
-    },
-    {
-      title: 'React pen pals Frontend',
-      subtitle: 'React Project',
-      category: 'project',
-      subcategory: 'react',
-      links: [
-        {
-          url: 'https://penpals.pages.gitlab.nanoka.fr/frontend/',
-          text: 'Visit website',
-        },
-        {
-          url: 'https://github.com/alexandre-tozzini/penpals-frontend',
-          text: 'View source code',
-        },
-      ],
-      technologies: [
-        {
-          name: 'React',
-        },
-        {
-          name: 'Redux',
-        },
-        {
-          name: 'Continuous deployment',
-        },
-      ],
-      content: 'Frontend of pen pals application developed with React.',
-      date: '進行中',
-    },
-    {
-      title: 'Pen pals API Backend',
-      subtitle: 'API Rails application',
-      category: 'project',
-      subcategory: 'rails',
-      links: [
-        {
-          url: 'https://github.com/alexandre-tozzini/penpals-backend',
-          text: 'View source code',
-        },
-      ],
-      technologies: [
-        {
-          name: 'Ruby on Rails',
-        },
-        {
-          name: 'RSpec',
-        },
-        {
-          name: 'API',
-        },
-        {
-          name: 'Docker',
-        },
-      ],
-      content: 'API to manage messages between pen pals.',
-      date: '進行中',
-    },
-    {
-      title: 'React Vertical Timeline',
-      subtitle: 'React Component',
-      category: 'library',
-      subcategory: 'react',
-      links: [
-        {
-          url: 'https://alexandre-tozzini.github.io/react-vertical-timeline/',
-          text: 'Visit website',
-        },
-        {
-          url: 'https://github.com/alexandre-tozzini/react-vertical-timeline',
-          text: 'View source code',
-        },
-      ],
-      technologies: [
-        {
-          name: 'React',
-        },
-      ],
-      content: 'A react component to generate responsive vertical timeline.',
-      date: '2017-10-27',
-    },
-    {
-      title: 'React Resume',
-      subtitle: 'React Project',
-      category: 'project',
-      subcategory: 'react',
-      links: [
-        {
-          url: 'https://alexandretozzini.com/',
-          text: 'Visit website',
-        },
-        {
-          url: 'https://github.com/alexandre-tozzini/resume',
-          text: 'View source code',
-        },
-      ],
-      technologies: [
-        {
-          name: 'React',
-        },
-        {
-          name: 'Redux',
-        },
-        {
-          name: 'Continuous deployment',
-        },
-      ],
-      content:
-        'My resume in japanese, french and english, developed with React.<br> With a score of 100/100 on PageSpeed Insights (mobile & desktop).',
-      date: '2017-10-02',
-    },
-    {
-      title: 'Application Piq-Up',
-      subtitle: 'Facebook Application',
-      category: 'project',
-      subcategory: 'facebook',
-      links: [
-        {
-          url: 'https://apps.facebook.com/ct_quizzy',
-          text: 'Open application',
-        },
-      ],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Facebook SDK',
-        },
-      ],
-      content:
-        'The pIQ-UP application will choose tests that are adapted to your cognitive profile to help you make progress through training.',
-      date: '2017-08-20',
-    },
-    {
-      title: 'Laravel 5 Friendships',
-      subtitle: 'Laravel Library',
-      category: 'library',
-      subcategory: 'laravel',
-      contribution: true,
-      links: [
-        {
-          url:
-            'https://github.com/hootlex/laravel-friendships/commits?author=alexandre-tozzini',
-          text: 'View commits',
-        },
-      ],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Laravel',
-        },
-        {
-          name: 'PHPUnit',
-        },
-      ],
-      content:
-        'Contributions to a Laravel library which gives the ability to manage friendships with Eloquent models.<br />Add new functionalities, improve build, add Unit tests, documentation, ...',
-      date: '2016-03-05',
-    },
-    {
-      title: 'MySQL User Account Management in PHP',
-      subtitle: 'Standalone PHP Library',
-      category: 'library',
-      subcategory: 'php',
-      links: [
-        {
-          url: 'https://github.com/alexandre-tozzini/db-user',
-          text: 'View source code',
-        },
-      ],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Atoum',
-        },
-      ],
-      content:
-        'Library which makes easier the MySQL User Account Management in PHP and it avoids the use of raw SQL queries.',
-      date: '2015-10-02',
-    },
-    {
-      title: 'GOCR for PHP',
-      subtitle: 'Standalone PHP Library',
-      category: 'library',
-      subcategory: 'php',
-      links: [
-        {
-          url: 'https://github.com/alexandre-tozzini/gocr-php',
-          text: 'View source code',
-        },
-      ],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Atoum',
-        },
-      ],
-      content:
-        'A wrapper to work with Gocr inside PHP scripts. This library makes easier the use of the OCR software named GOCR.',
-      date: '2015-09-07',
-    },
-    {
-      title: 'Application Whopper Moveout for Burger King France',
-      subtitle: 'Facebook Application',
-      category: 'project',
-      subcategory: 'facebook',
-      links: [],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Facebook SDK',
-        },
-      ],
-      content: 'Application for Burger King France.',
-      date: '2015-03-17',
-    },
-    {
-      title: 'Application BKAddicts for Burger King France',
-      subtitle: 'Facebook Application',
-      category: 'project',
-      subcategory: 'facebook',
-      links: [
-        {
-          url:
-            'https://www.facebook.com/burgerkingfranceofficiel/app/604808892968722/',
-          text: 'Open application',
-        },
-      ],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Facebook SDK',
-        },
-      ],
-      content: 'Application for Burger King France',
-      date: '2014-09-26',
-    },
-    {
-      title: 'EM2C',
-      subtitle: 'PHP Project',
-      category: 'project',
-      subcategory: 'php',
-      links: [
-        {
-          url: 'http://www.em2c.com/',
-          text: 'Visit website 1',
-        },
-        {
-          url: 'http://www.em2c-voslocaux.com/',
-          text: 'Visit website 2',
-        },
-      ],
-      technologies: [
-        {
-          name: 'PHP',
-        },
-        {
-          name: 'Javascript',
-        },
-      ],
-      content: 'Showcase websites of the EM2C company.',
-      date: '2018-01-10',
-    },
-  ],
-  volunteer: [
-    {
-      name: '',
-    },
-  ],
+  volunteer: [],
   hobbies: [
     {
-      name: '料理',
-      icon: 'restaurant',
-      description: '特に日本料理とフランスと韓国料理。',
+      name: 'Jiu-Jitsu',
+      icon: 'fitness_center',
+      description: 'Kampfsport und Lebensstil.',
     },
     {
-      name: '旅行',
-      icon: 'flight',
-      description: '一人旅か友達と',
+      name: 'Judo',
+      icon: 'sports_kabaddi',
+      description: 'Kontinuierliches Training und Lernen.',
     },
     {
-      name: '言語の勉強',
-      icon: 'school',
-      description: '日本語か韓国語',
+      name: 'Aquaristik',
+      icon: 'pets',
+      description: 'Pflege und Beobachtung von Zierfischen.',
     },
     {
-      name: '自転車',
-      icon: 'directions_bike',
-      description: '天気が良いとき',
-    },
-    {
-      name: '写真',
-      icon: 'photo_camera',
-      description: 'いい景色の',
-    },
-    {
-      name: 'Trading',
-      icon: 'attach_money',
-      description: '暗号通貨',
+      name: 'Wandern',
+      icon: 'terrain',
+      description: 'Spaziergänge in der Natur und Kontakt mit der Umwelt.',
     },
   ],
 };

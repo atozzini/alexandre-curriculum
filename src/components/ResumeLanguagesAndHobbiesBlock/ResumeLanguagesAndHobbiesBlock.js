@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Icon from '@material-ui/core/Icon';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import Icon from '@mui/material/Icon';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 import DotsProgress from '../../components/DotsProgress/DotsProgress';
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
-
-import './ResumeLanguagesAndHobbiesBlock.css';
 
 const ResumeLanguagesAndHobbiesBlock = ({
   languages,
@@ -30,24 +28,23 @@ const ResumeLanguagesAndHobbiesBlock = ({
       </div>
 
       <div className="ResumeLanguagesAndHobbiesBlock-languages">
-        {languages.map(language => (
+        {(languages || []).map((language) => (
           <div
             className="ResumeLanguagesAndHobbiesBlock-language"
-            key={language.name}
+            key={language?.name}
           >
             <div className="ResumeLanguagesAndHobbiesBlock-languageTitleAndLevel">
               <span className="ResumeLanguagesAndHobbiesBlock-languageTitle">
-                {language.name}
+                {language?.name}
               </span>
               <br />
               <span className="ResumeLanguagesAndHobbiesBlock-languageLevel">
-                {' '}
-                {language.level}
+                {language?.level}
               </span>
             </div>
             <DotsProgress
               maxNumberOfDots={10}
-              numberOfActiveDots={language.levelNumber}
+              numberOfActiveDots={language?.levelNumber || 0}
             />
           </div>
         ))}
@@ -69,9 +66,9 @@ const ResumeLanguagesAndHobbiesBlock = ({
     </div>
 
     <div className="ResumeLanguagesAndHobbiesBlock-hobbies">
-      {hobbies.map(hobby => (
+      {(hobbies || []).map((hobby) => (
         <div
-          key={hobby.name}
+          key={hobby?.name}
           className="ResumeLanguagesAndHobbiesBlock-hobby-container"
         >
           <div className="ResumeLanguagesAndHobbiesBlock-hobby">
@@ -80,17 +77,17 @@ const ResumeLanguagesAndHobbiesBlock = ({
               className="ResumeLanguagesAndHobbiesBlock-hobby-front"
             >
               <CardContent>
-                <Icon>{hobby.icon}</Icon>
-                <h4>{hobby.name}</h4>
+                <Icon>{hobby?.icon}</Icon>
+                <h4>{hobby?.name}</h4>
               </CardContent>
             </Card>
             <Card
-              key={hobby.name}
+              key={`${hobby?.name}-back`}
               style={hobbyCardStyle}
               className="ResumeLanguagesAndHobbiesBlock-hobby-back"
             >
               <CardContent>
-                {hobby.description && (
+                {hobby?.description && (
                   <div className="ResumeLanguagesAndHobbiesBlock-hobby-back-description">
                     {hobby.description}
                   </div>
@@ -105,9 +102,14 @@ const ResumeLanguagesAndHobbiesBlock = ({
 );
 
 ResumeLanguagesAndHobbiesBlock.propTypes = {
-  languages: PropTypes.array.isRequired,
-  hobbies: PropTypes.array.isRequired,
+  languages: PropTypes.array,
+  hobbies: PropTypes.array,
   hobbyCardStyle: PropTypes.object.isRequired,
+};
+
+ResumeLanguagesAndHobbiesBlock.defaultProps = {
+  languages: [],
+  hobbies: [],
 };
 
 export default ResumeLanguagesAndHobbiesBlock;

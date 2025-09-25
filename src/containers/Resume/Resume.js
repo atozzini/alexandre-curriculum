@@ -1,83 +1,88 @@
 import React, { Component } from 'react';
+import Head from 'next/head';
+import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import flow from 'lodash/flow';
-import Helmet from 'react-helmet';
-import { injectIntl, intlShape } from 'react-intl';
-import { withTheme } from '@material-ui/core/styles';
-
 import ResumeAppBar from '../../components/ResumeAppBar/ResumeAppBar';
 import ResumeHomeBlock from '../../components/ResumeHomeBlock/ResumeHomeBlock';
 import ResumeAboutMeBlock from '../../components/ResumeAboutMeBlock/ResumeAboutMeBlock';
 import ResumeWorkAndEducationBlock from '../../components/ResumeWorkAndEducationBlock/ResumeWorkAndEducationBlock';
 import ResumeSkillsBlock from '../../components/ResumeSkillsBlock/ResumeSkillsBlock';
-import ResumeProjectsBlock from '../../components/ResumeProjectsBlock/ResumeProjectsBlock';
 import ResumeLanguagesAndHobbiesBlock from '../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock';
-import ResumeCustomersBlock from '../../components/ResumeCustomersBlock/ResumeCustomersBlock';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
-
-import appTheme from '../../theme';
-import './Resume.css';
 
 class Resume extends Component {
   getSkillsByLanguages() {
     const { skills } = this.props;
+    if (!Array.isArray(skills)) return [];
 
     const skillsByLanguages = skills.reduce((obj, item) => {
       const newObj = obj;
-      if (item.language) {
+      if (item?.language?.name) {
         newObj[item.language.name] = newObj[item.language.name] || [];
         newObj[item.language.name].push(item);
       }
       return newObj;
     }, {});
 
-    return Object.keys(skillsByLanguages).map(key => skillsByLanguages[key]);
+    return Object.keys(skillsByLanguages).map((key) => skillsByLanguages[key]);
   }
 
   render() {
-    let fullName = `${this.props.firstName} ${this.props.lastName}`;
-    let shortFullName = `${this.props.firstName} ${this.props.lastName}`;
-    if (this.props.firstNameKana) {
-      shortFullName = this.props.firstNameKana + this.props.lastNameKana;
-      fullName += ` (${this.props.firstNameKana}${this.props.lastNameKana})`;
+    const {
+      firstName,
+      lastName,
+      firstNameKana,
+      lastNameKana,
+      cvPDF,
+      meta,
+      intl,
+      customTheme,
+      positions,
+      educations,
+      skills,
+      languages,
+      hobbies,
+      tools,
+    } = this.props;
+
+    let fullName = `${firstName || ''} ${lastName || ''}`;
+    let shortFullName = fullName;
+    if (firstNameKana) {
+      shortFullName = `${firstNameKana}${lastNameKana || ''}`;
+      fullName += ` (${firstNameKana}${lastNameKana || ''})`;
     }
 
-    const cv = this.props.cvPDF;
+    const theme =
+      this.props.theme || {
+        palette: {
+          mode: 'light',
+          primary: { main: '#000' },
+          secondary: { main: '#fff' },
+        },
+      };
 
-    const { theme } = this.props;
-    const { formatMessage, formatDate } = this.props.intl;
+    const { formatMessage } = intl;
 
-    const primaryColor = theme.palette.primary.main;
-    const secondaryColor = theme.palette.secondary.main;
+    const primaryColor = theme?.palette?.primary?.main || '#000';
+    const secondaryColor = theme?.palette?.secondary?.main || '#fff';
 
-    const skills = this.getSkillsByLanguages();
+    const groupedSkills = this.getSkillsByLanguages();
 
     const styles = {
-      primaryColor: {
-        background: primaryColor,
-        color: '#fff',
-      },
-      secondaryColor: {
-        background: secondaryColor,
-        color: '#fff',
-      },
+      primaryColor: { background: primaryColor, color: '#fff' },
+      secondaryColor: { background: secondaryColor, color: '#fff' },
     };
 
     return (
       <div className="Resume">
-        <Helmet
-          title={this.props.meta.title}
-          meta={[
-            { name: 'description', content: this.props.meta.description },
-            { name: 'keywords', content: this.props.meta.keywords },
-            { property: 'og:title', content: this.props.meta.title },
-            { property: 'twitter:title', content: this.props.meta.title },
-            {
-              property: 'og:description',
-              content: this.props.meta.description,
-            },
-          ]}
-        />
+        <Head>
+          <title>{meta?.title || 'Resume'}</title>
+          <meta name="description" content={meta?.description || ''} />
+          <meta name="keywords" content={meta?.keywords || ''} />
+          <meta property="og:title" content={meta?.title || ''} />
+          <meta property="twitter:title" content={meta?.title || ''} />
+          <meta property="og:description" content={meta?.description || ''} />
+        </Head>
 
         <ResumeAppBar
           emailAddress={this.props.emailAddress}
@@ -87,7 +92,7 @@ class Resume extends Component {
         <ResumeHomeBlock
           shortFullName={shortFullName}
           headline={this.props.headline}
-          style={appTheme.phpColor.style}
+          style={customTheme?.resumeColor?.style || {}}
         />
 
         <ResumeAboutMeBlock
@@ -95,32 +100,25 @@ class Resume extends Component {
           headline={this.props.headline}
           summary={this.props.summary}
           pictureUrl={this.props.pictureUrl}
-          resumeUrl={cv}
-          style={appTheme.phpColor.style}
+          resumeUrl={cvPDF}
+          style={customTheme?.resumeColor?.style || {}}
         />
 
         <ResumeWorkAndEducationBlock
           workIconStyle={styles.primaryColor}
           educationIconStyle={styles.secondaryColor}
-          positions={this.props.positions}
-          educations={this.props.educations}
+          positions={positions || []}
+          educations={educations || []}
           formatMessage={formatMessage}
         />
 
-        <ResumeSkillsBlock skills={skills} tools={this.props.tools} />
-
-        <ResumeProjectsBlock
-          projects={this.props.projects}
-          formatDate={formatDate}
-        />
+        <ResumeSkillsBlock skills={groupedSkills || []} tools={tools || ''} />
 
         <ResumeLanguagesAndHobbiesBlock
-          languages={this.props.languages}
-          hobbies={this.props.hobbies}
+          languages={languages || []}
+          hobbies={hobbies || []}
           hobbyCardStyle={styles.primaryColor}
         />
-
-        <ResumeCustomersBlock customers={this.props.customers} />
 
         <BottomNavigation />
       </div>
@@ -129,9 +127,10 @@ class Resume extends Component {
 }
 
 Resume.propTypes = {
-  theme: PropTypes.object.isRequired,
-  meta: PropTypes.object.isRequired,
-  intl: intlShape.isRequired,
+  theme: PropTypes.object,
+  customTheme: PropTypes.object.isRequired,
+  meta: PropTypes.object,
+  intl: PropTypes.object.isRequired,
   firstName: PropTypes.string,
   firstNameKana: PropTypes.string,
   lastName: PropTypes.string,
@@ -158,9 +157,8 @@ Resume.defaultProps = {
   emailAddress: 'alexandretozzini@gmail.com',
   headline: 'Full-stack software engineer',
   summary:
-    '♥ Microservice architecture lover ♥<br>Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces. Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1. My favourite stack : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.',
-  pictureUrl:
-    'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYqAAAAJGQ0YjYxNDI0LTEwOTMtNGVkNC1hNDIxLWYyNzNkMTYzNDMzNg.jpg',
+    '♥ Microservice architecture lover ♥<br>Experienced Chief Technology Officer, Developer & Teacher...',
+  pictureUrl: '',
   positions: [],
   languages: [],
   skills: [],
@@ -168,8 +166,11 @@ Resume.defaultProps = {
   hobbies: [],
   customers: [],
   projects: [],
+  meta: {
+    title: 'Resume - Alexandre Tozzini',
+    description: 'Full-stack software engineer Resume',
+    keywords: 'developer, software, resume',
+  },
 };
 
-const decorators = flow([withTheme(), injectIntl]);
-
-export default decorators(Resume);
+export default injectIntl(Resume);

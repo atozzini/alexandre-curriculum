@@ -6,7 +6,6 @@ import GridBackground from '../../components/GridBackground/GridBackground';
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 
 import appTheme from '../../theme';
-import './ResumeHomeBlock.css';
 
 export const ResumeHomeBlock = ({ style, shortFullName, headline }) => (
   <ScreenBlock id="Resume-home" style={style} className="ResumeHomeBlock">
@@ -25,12 +24,6 @@ export const ResumeHomeBlock = ({ style, shortFullName, headline }) => (
 
     <div className="ResumeHomeBlock-squares">
       <GridBackground>
-        <div style={{ ...appTheme.laravelColor.style }}>
-          {appTheme.laravelColor.icon}
-        </div>
-        <div style={{ ...appTheme.phpColor.style }}>
-          {appTheme.phpColor.icon}
-        </div>
         <div style={{ ...appTheme.reactColor.style }}>
           {appTheme.reactColor.icon}
         </div>
@@ -43,6 +36,21 @@ export const ResumeHomeBlock = ({ style, shortFullName, headline }) => (
         <div style={{ ...appTheme.dockerColor.style }}>
           {appTheme.dockerColor.icon}
         </div>
+        <div style={{ ...appTheme.postgresColor.style }}>
+          {appTheme.postgresColor.icon}
+        </div>
+        <div style={{ ...appTheme.oracleColor.style }}>
+          {appTheme.oracleColor.icon}
+        </div>
+        <div style={{ ...appTheme.mysqlColor.style }}>
+          {appTheme.mysqlColor.icon}
+        </div>
+        <div style={{ ...appTheme.linuxColor.style }}>
+          {appTheme.linuxColor.icon}
+        </div>
+        <div style={{ ...appTheme.githubColor.style }}>
+          {appTheme.githubColor.icon}
+        </div>
       </GridBackground>
     </div>
   </ScreenBlock>
@@ -54,8 +62,8 @@ ResumeHomeBlock.propTypes = {
   style: PropTypes.object,
 };
 
-ResumeHomeBlock.defaultPropTypes = {
-  style: {},
+ResumeHomeBlock.defaultProps = {
+  style: { background: '#1e1e1e', color: '#f5f5f5' }, // dark mode
 };
 
 export default ResumeHomeBlock;

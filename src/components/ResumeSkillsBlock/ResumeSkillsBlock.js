@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Avatar from '@mui/material/Avatar';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
-
 import appTheme from '../../theme';
-import './ResumeSkillsBlock.css';
 
 const ResumeSkillsBlock = ({ skills, tools }) => (
   <ScreenBlock id="Resume-skills" className="ResumeSkillsBlock">
@@ -20,42 +18,46 @@ const ResumeSkillsBlock = ({ skills, tools }) => (
         <p>
           <FormattedMessage
             id="Resume.skillsSubtitle"
-            defaultMessage="I can say i’m quite good at"
+            defaultMessage="I can say I’m quite good at"
           />
         </p>
       </div>
 
       <div className="ResumeSkillsBlock-skills">
-        {skills.map((skillCategory, i) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Card key={i}>
-            <CardContent>
-              <Avatar
-                style={{
-                  ...appTheme[`${skillCategory[0].language.style}Color`].style,
-                  width: 100,
-                  height: 100,
-                  margin: '0 auto',
-                }}
-              >
-                {appTheme[`${skillCategory[0].language.style}Color`].icon}
-              </Avatar>
-              <h3
-                style={{
-                  color:
-                    appTheme[`${skillCategory[0].language.style}Color`].style
-                      .background,
-                }}
-              >
-                {skillCategory[0].language.name}
-              </h3>
-              {skillCategory.map((skill, j) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <div key={j}>{skill.name}</div>
-              ))}
-            </CardContent>
-          </Card>
-        ))}
+        {(skills || []).map((skillCategory, i) => {
+          const lang = skillCategory?.[0]?.language;
+          const themeKey = lang?.style ? `${lang.style}Color` : null;
+          const themeObj = themeKey ? appTheme[themeKey] : null;
+
+          return (
+            // eslint-disable-next-line react/no-array-index-key
+            <Card key={i}>
+              <CardContent>
+                <Avatar
+                  style={{
+                    ...(themeObj?.style || {}),
+                    width: 100,
+                    height: 100,
+                    margin: '0 auto',
+                  }}
+                >
+                  {themeObj?.icon}
+                </Avatar>
+                <h3
+                  style={{
+                    color: themeObj?.style?.background || '#000',
+                  }}
+                >
+                  {lang?.name || ''}
+                </h3>
+                {(skillCategory || []).map((skill, j) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <div key={j}>{skill?.name || ''}</div>
+                ))}
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
 
       <br />
@@ -67,22 +69,27 @@ const ResumeSkillsBlock = ({ skills, tools }) => (
         <p>
           <FormattedMessage
             id="Resume.toolsSubtitle"
-            defaultMessage="My favorites tools"
+            defaultMessage="My favorite tools"
           />
         </p>
       </div>
 
       <div className="ResumeSkillsBlock-tools">
         {/* eslint-disable-next-line react/no-danger */}
-        <p dangerouslySetInnerHTML={{ __html: tools }} />
+        <p dangerouslySetInnerHTML={{ __html: tools || '' }} />
       </div>
     </div>
   </ScreenBlock>
 );
 
 ResumeSkillsBlock.propTypes = {
-  skills: PropTypes.array.isRequired,
-  tools: PropTypes.string.isRequired,
+  skills: PropTypes.array,
+  tools: PropTypes.string,
 };
 
-export default ResumeSkillsBlock;
+ResumeSkillsBlock.defaultProps = {
+  skills: [],
+  tools: '',
+};
+
+export default ResumeSkillsBlock;  // <-- garante o export default

@@ -5,17 +5,18 @@ import cvPT from '../../data/pt';
 import cvDE from '../../data/de';
 import cvEN from '../../data/en';
 import customers from '../../data/customers.json';
-import cvPDFPT from '../../data/pt.pdf';
-import cvPDFDE from '../../data/de.pdf';
-import cvPDFEN from '../../data/en.pdf';
+import cvPDFPT from '/pt.pdf';
+import cvPDFDE from '/de.pdf';
+import cvPDFEN from '/en.pdf';
 import Resume from '../Resume/Resume';
 
 class ResumeScreen extends Component {
-  componentWillMount() {
-    this.setState({
+  constructor(props) {
+    super(props);
+    this.state = {
       cvs: { pt: cvPT, de: cvDE, en: cvEN },
       cvPDFs: { pt: cvPDFPT, de: cvPDFDE, en: cvPDFEN },
-    });
+    };
   }
 
   render() {

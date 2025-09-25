@@ -1,113 +1,73 @@
+// src/theme.js
 import React from 'react';
 
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import IconGit from 'react-devicon/git/plain'
-import IconPython from 'react-devicon/python/plain'
-import ReactIcon from 'react-devicon/react/original';
-import RubyIcon from 'react-devicon/ruby/plain';
-import RailsIcon from 'react-devicon/rails/plain';
-import JavascriptIcon from 'react-devicon/javascript/plain';
-import DockerIcon from 'react-devicon/docker/plain';
-import FacebookIcon from 'react-devicon/facebook/plain';
-import GoIcon from 'react-devicon/go/plain';
-import WordpressIcon from 'react-devicon/wordpress/plain';
-import CordovaIcon from './components/Icons/Apachecordova';
+import { SiPostgresql, SiOracle, SiMysql, SiDocker, SiReact, SiRuby, SiJavascript, SiGo, SiLinux, SiGithub } from 'react-icons/si';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const theme = {
-  laravelColor: {
-    style: {
-      background: '#fd4f31',
-      color: '#fff',
-    },
-    className: 'vertical-timeline-element--laravel',
-    icon: <IconGit />,
-  },
-  phpColor: {
-    style: {
-      background: '#6181b6',
-      color: '#fff',
-    },
-    className: 'vertical-timeline-element--php',
-    icon: <IconPython />,
-  },
-  reactColor: {
-    style: {
-      background: '#61DAFB',
-      color: '#fff',
-    },
-    className: 'vertical-timeline-element--react',
-    icon: <ReactIcon />,
+  goColor: {
+    style: { background: '#6AD7E5', color: '#fff' },
+    className: 'vertical-timeline-element--go',
+    icon: <SiGo />,
   },
   rubyColor: {
-    style: {
-      background: '#d91404',
-      color: '#fff',
-    },
+    style: { background: '#CC342D', color: '#fff' },
     className: 'vertical-timeline-element--ruby',
-    icon: <RubyIcon />,
+    icon: <SiRuby />,
   },
   railsColor: {
-    style: {
-      background: '#a62c46',
-      color: '#fff',
-    },
+    style: { background: '#A62C46', color: '#fff' },
     className: 'vertical-timeline-element--rails',
-    icon: <RailsIcon />,
+    icon: <SiRuby />, // pode trocar por outro, mas Rails não tem ícone próprio
+  },
+  reactColor: {
+    style: { background: '#282c34', color: '#61DAFB' },
+    className: 'vertical-timeline-element--react',
+    icon: <SiReact />,
   },
   javascriptColor: {
-    style: {
-      background: '#F0DB4F',
-      color: '#fff',
-    },
+    style: { background: '#323330', color: '#F7DF1E' },
     className: 'vertical-timeline-element--javascript',
-    icon: <JavascriptIcon />,
+    icon: <SiJavascript />,
   },
   dockerColor: {
-    style: {
-      background: '#019bc6',
-      color: '#fff',
-    },
+    style: { background: '#384d54', color: '#0db7ed' },
     className: 'vertical-timeline-element--docker',
-    icon: <DockerIcon />,
+    icon: <SiDocker />,
   },
-  cordovaColor: {
-    style: {
-      background: '#4CC2E4',
-      color: '#fff',
-    },
-    className: 'vertical-timeline-element--cordova',
-    icon: <CordovaIcon />,
+  postgresColor: {
+    style: { background: '#336791', color: '#fff' },
+    className: 'vertical-timeline-element--postgres',
+    icon: <SiPostgresql />,
   },
-  wordpressColor: {
-    style: {
-      background: '#21759b',
-      color: '#fff',
-    },
-    className: 'vertical-timeline-element--wordpress',
-    icon: <WordpressIcon />,
+  oracleColor: {
+    style: { background: '#F80000', color: '#fff' },
+    className: 'vertical-timeline-element--oracle',
+    icon: <SiOracle />,
   },
-  facebookColor: {
-    style: {
-      background: '#4267B2',
-      color: '#fff',
-    },
-    className: 'vertical-timeline-element--facebook',
-    icon: <FacebookIcon />,
+  mysqlColor: {
+    style: { background: '#00758F', color: '#fff' },
+    className: 'vertical-timeline-element--mysql',
+    icon: <SiMysql />,
   },
-  goColor: {
-    style: {
-      background: '#6AD7E5',
-      color: '#fff',
-    },
-    className: 'vertical-timeline-element--go',
-    icon: <GoIcon />,
+  linuxColor: {
+    style: { background: '#333333', color: '#FCC624' },
+    className: 'vertical-timeline-element--linux',
+    icon: <SiLinux />,
+  },
+  githubColor: {
+    style: { background: '#24292f', color: '#fff' },
+    className: 'vertical-timeline-element--github',
+    icon: <SiGithub />,
   },
   othersColor: {
-    style: {
-      background: '#019bc6',
-      color: '#fff',
-    },
+    style: { background: '#555555', color: '#fff' },
     className: 'vertical-timeline-element--others',
+    icon: <MoreHorizIcon />,
+  },
+  resumeColor: {
+    style: { background: '#1e1e1e', color: '#f5f5f5' },
+    className: 'vertical-timeline-element--resume',
     icon: <MoreHorizIcon />,
   },
 };

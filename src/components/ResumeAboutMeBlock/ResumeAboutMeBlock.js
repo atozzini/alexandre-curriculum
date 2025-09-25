@@ -1,11 +1,10 @@
+// src/components/ResumeAboutMeBlock/ResumeAboutMeBlock.js
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { FormattedMessage } from 'react-intl';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
-
-import './ResumeAboutMeBlock.css';
 
 const ResumeAboutMeBlock = ({
   style,
@@ -14,10 +13,11 @@ const ResumeAboutMeBlock = ({
   summary,
   pictureUrl,
   resumeUrl,
+  emailAddress,
 }) => {
   let pictureSrc = pictureUrl;
   if (!/^https?:\/\//i.test(pictureUrl)) {
-    pictureSrc = require(`../../data/img/${pictureUrl}`); // eslint-disable-line global-require
+    pictureSrc = `/img/${pictureUrl}`;
   }
 
   return (
@@ -66,7 +66,7 @@ const ResumeAboutMeBlock = ({
               </Button>
               &nbsp;&nbsp;&nbsp;
               <Button
-                href="mailto:alexandretozzini@gmail.com"
+                href={`mailto:${emailAddress}`}
                 variant="contained"
                 color="secondary"
               >
@@ -76,7 +76,7 @@ const ResumeAboutMeBlock = ({
           </div>
 
           <div className="ResumeAboutMeBlock-profilePicture Resume-profilePicture">
-            <img alt="" src={pictureSrc} />
+            <img alt={fullName} src={pictureSrc} />
           </div>
         </div>
       </div>
@@ -91,9 +91,10 @@ ResumeAboutMeBlock.propTypes = {
   summary: PropTypes.string.isRequired,
   pictureUrl: PropTypes.string.isRequired,
   resumeUrl: PropTypes.string.isRequired,
+  emailAddress: PropTypes.string.isRequired,
 };
 
-ResumeAboutMeBlock.defaultPropTypes = {
+ResumeAboutMeBlock.defaultProps = {
   style: {},
 };
 

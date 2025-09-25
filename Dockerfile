@@ -1,29 +1,27 @@
-# Stage 0 - Building
-FROM alekzonder/puppeteer:latest as node
-
+# Etapa de build
+FROM node:20-bullseye AS build
 WORKDIR /app
-COPY package.json /app/
-RUN yarn install
 
-COPY ./ /app/
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
-# Build each versions
-RUN REACT_APP_LOCALE=de yarn build
-RUN mv build build_de
-RUN REACT_APP_LOCALE=en yarn build
-RUN mv build build_en
-RUN yarn build
-RUN mv build_de build/de
-RUN mv build_en build/en
+COPY . .
+RUN yarn build  # vai gerar em /app/out
 
-# Stage 1 - Package compiled app in Nginx
-FROM nginx:stable-alpine
+# Etapa de produção com nginx
+FROM nginx:stable-alpine AS runner
+WORKDIR /usr/share/nginx/html
 
-RUN rm -rf /etc/nginx/conf.d
-RUN mkdir /etc/nginx/conf.d
+# Limpa o html padrão
+RUN rm -rf ./*
+
+# Copia os arquivos exportados do Next
+COPY --from=build /app/out ./
+
+# Copia a config customizada do nginx
+# Copia e sobrescreve o default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN rm -f /etc/nginx/conf.d/*default.conf.default
 
-RUN mkdir /app
-WORKDIR /app
-
-COPY --from=node /app/build/ /app
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

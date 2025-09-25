@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'next/link';
 import { IntlProvider } from 'react-intl';
 
 import ResumeWorkAndEducationBlock from './ResumeWorkAndEducationBlock';
@@ -15,7 +15,7 @@ it('renders without crashing', () => {
           educationIconStyle={{}}
           positions={[]}
           educations={[]}
-          formatMessage={() => {}}
+          formatMessage={() => { }}
         />
       </MemoryRouter>
     </IntlProvider>,
