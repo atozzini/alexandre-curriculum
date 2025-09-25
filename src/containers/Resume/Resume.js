@@ -10,9 +10,7 @@ import ResumeHomeBlock from '../../components/ResumeHomeBlock/ResumeHomeBlock';
 import ResumeAboutMeBlock from '../../components/ResumeAboutMeBlock/ResumeAboutMeBlock';
 import ResumeWorkAndEducationBlock from '../../components/ResumeWorkAndEducationBlock/ResumeWorkAndEducationBlock';
 import ResumeSkillsBlock from '../../components/ResumeSkillsBlock/ResumeSkillsBlock';
-import ResumeProjectsBlock from '../../components/ResumeProjectsBlock/ResumeProjectsBlock';
 import ResumeLanguagesAndHobbiesBlock from '../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock';
-import ResumeCustomersBlock from '../../components/ResumeCustomersBlock/ResumeCustomersBlock';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 
 import appTheme from '../../theme';
@@ -45,7 +43,7 @@ class Resume extends Component {
     const cv = this.props.cvPDF;
 
     const { theme } = this.props;
-    const { formatMessage, formatDate } = this.props.intl;
+    const { formatMessage } = this.props.intl;
 
     const primaryColor = theme.palette.primary.main;
     const secondaryColor = theme.palette.secondary.main;
@@ -109,18 +107,11 @@ class Resume extends Component {
 
         <ResumeSkillsBlock skills={skills} tools={this.props.tools} />
 
-        <ResumeProjectsBlock
-          projects={this.props.projects}
-          formatDate={formatDate}
-        />
-
         <ResumeLanguagesAndHobbiesBlock
           languages={this.props.languages}
           hobbies={this.props.hobbies}
           hobbyCardStyle={styles.primaryColor}
         />
-
-        <ResumeCustomersBlock customers={this.props.customers} />
 
         <BottomNavigation />
       </div>
@@ -146,8 +137,6 @@ Resume.propTypes = {
   skills: PropTypes.arrayOf(PropTypes.object),
   educations: PropTypes.arrayOf(PropTypes.object),
   hobbies: PropTypes.arrayOf(PropTypes.object),
-  customers: PropTypes.arrayOf(PropTypes.object),
-  projects: PropTypes.arrayOf(PropTypes.object),
   cvPDF: PropTypes.string,
   tools: PropTypes.string,
 };
@@ -166,8 +155,6 @@ Resume.defaultProps = {
   skills: [],
   educations: [],
   hobbies: [],
-  customers: [],
-  projects: [],
 };
 
 const decorators = flow([withTheme(), injectIntl]);

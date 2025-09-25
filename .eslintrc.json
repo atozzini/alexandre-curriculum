@@ -23,6 +23,7 @@
     }
   },
   "rules": {
+    "prefer-regex-literals": "off",
     "arrow-parens": [
       "error",
       "as-needed"
@@ -92,8 +93,11 @@
   },
   "settings": {
     "import/resolver": {
-      "webpack": {
-        "config": "./internals/webpack/webpack.prod.babel.js"
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     }
   }

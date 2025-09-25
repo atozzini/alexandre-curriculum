@@ -1,8 +1,8 @@
 import React from 'react';
 
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import IconGit from 'react-devicon/git/plain'
-import IconPython from 'react-devicon/python/plain'
+import IconGit from 'react-devicon/git/plain';
+import IconPython from 'react-devicon/python/plain';
 import ReactIcon from 'react-devicon/react/original';
 import RubyIcon from 'react-devicon/ruby/plain';
 import RailsIcon from 'react-devicon/rails/plain';
