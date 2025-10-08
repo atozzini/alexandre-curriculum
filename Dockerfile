@@ -1,29 +1,30 @@
-# Stage 0 - Building
-FROM alekzonder/puppeteer:latest as node
+# Stage 0 - Build React
+FROM node:20-alpine as build
 
 WORKDIR /app
-COPY package.json /app/
-RUN yarn install
 
-COPY ./ /app/
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
-# Build each versions
-RUN REACT_APP_LOCALE=de yarn build
-RUN mv build build_de
-RUN REACT_APP_LOCALE=en yarn build
-RUN mv build build_en
-RUN yarn build
-RUN mv build_de build/de
-RUN mv build_en build/en
+COPY . .
 
-# Stage 1 - Package compiled app in Nginx
+# Builds para cada idioma, sempre rodando o fix antes
+RUN npm run fix-normalize-css-unit && REACT_APP_LOCALE=de yarn react-scripts build && cp -r build build_de && rm -rf build
+RUN npm run fix-normalize-css-unit && REACT_APP_LOCALE=en yarn react-scripts build && cp -r build build_en && rm -rf build
+RUN npm run fix-normalize-css-unit && REACT_APP_LOCALE=it yarn react-scripts build && cp -r build build_it && rm -rf build
+RUN npm run fix-normalize-css-unit && yarn react-scripts build   # build padrão (pt)
+
+# Reorganiza pastas
+RUN mv build_de build/de \
+  && mv build_en build/en \
+  && mv build_it build/it
+
+# Stage 1 - Nginx
 FROM nginx:stable-alpine
 
-RUN rm -rf /etc/nginx/conf.d
-RUN mkdir /etc/nginx/conf.d
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN mkdir /app
-WORKDIR /app
+COPY --from=build /app/build /usr/share/nginx/html
 
-COPY --from=node /app/build/ /app
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

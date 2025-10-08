@@ -10,7 +10,6 @@ import SchoolIcon from '@material-ui/icons/School';
 import SettingsIcon from '@material-ui/icons/SettingsApplications';
 import LanguageIcon from '@material-ui/icons/Language';
 import ToysIcon from '@material-ui/icons/Toys';
-import CodeIcon from '@material-ui/icons/Code';
 
 import './BottomNavigation.css';
 
@@ -49,11 +48,6 @@ const buttons = [
     label: 'SimpleBottomNavigation.skills',
     name: 'Resume-skills',
     icon: <SettingsIcon />,
-  },
-  {
-    label: 'SimpleBottomNavigation.projects',
-    name: 'Resume-projects',
-    icon: <CodeIcon />,
   },
   {
     label: 'SimpleBottomNavigation.languages',

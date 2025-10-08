@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import cvPT from '../../data/pt';
 import cvDE from '../../data/de';
 import cvEN from '../../data/en';
-import customers from '../../data/customers.json';
 import cvPDFPT from '../../data/pt.pdf';
 import cvPDFDE from '../../data/de.pdf';
 import cvPDFEN from '../../data/en.pdf';
@@ -21,7 +20,7 @@ class ResumeScreen extends Component {
   render() {
     const cv = this.state.cvs[this.props.currentLanguage];
     const cvPDF = this.state.cvPDFs[this.props.currentLanguage];
-    return <Resume {...cv} cvPDF={cvPDF} customers={customers} />;
+    return <Resume {...cv} cvPDF={cvPDF} />;
   }
 }
 

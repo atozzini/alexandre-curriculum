@@ -62,7 +62,9 @@ const ResumeWorkAndEducationBlock = ({
         {positions.map((position, i) => {
           let picture = null;
           if (position.picture) {
-            picture = require(`../../data/img/${position.picture}`); // eslint-disable-line global-require
+            picture = position.picture.startsWith('/img/')
+              ? position.picture
+              : `/img/${position.picture}`;
           }
           return (
             <VerticalTimelineElement
