@@ -5,14 +5,10 @@ import Helmet from 'react-helmet';
 
 export const Meta = ({ location: { pathname }, locale }) => {
   const mainDomain = 'https://alexandretozzini.com';
-  const deDomain = 'https://webエンジニア.com';
 
   let canonical = mainDomain;
-  if (locale === 'de') {
-    canonical = deDomain;
-  }
 
-  if (pathname !== '/de/rirekisho.html' && pathname !== '/en/resume.html') {
+  if (pathname !== '/de/lebenslauf.html' && pathname !== '/en/resume.html') {
     canonical += pathname;
   }
 

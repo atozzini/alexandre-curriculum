@@ -85,7 +85,7 @@ class Resume extends Component {
         <ResumeHomeBlock
           shortFullName={shortFullName}
           headline={this.props.headline}
-          style={appTheme.phpColor.style}
+          style={appTheme.reactColor.style}
         />
 
         <ResumeAboutMeBlock
@@ -94,7 +94,7 @@ class Resume extends Component {
           summary={this.props.summary}
           pictureUrl={this.props.pictureUrl}
           resumeUrl={cv}
-          style={appTheme.phpColor.style}
+          style={appTheme.reactColor.style}
         />
 
         <ResumeWorkAndEducationBlock

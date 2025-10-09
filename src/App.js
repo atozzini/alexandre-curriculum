@@ -10,6 +10,7 @@ import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import pt from 'react-intl/locale-data/pt';
 import de from 'react-intl/locale-data/de';
+import it from 'react-intl/locale-data/it';
 
 import languages from './i18n';
 
@@ -23,7 +24,7 @@ import Meta from './containers/Meta/Meta';
 import { changeLanguage } from './actions';
 import { history } from './store/configureStore';
 
-addLocaleData([...en, ...pt, ...de]);
+addLocaleData([...en, ...pt, ...de, ...it]);
 
 const theme = createMuiTheme({
   palette: {
@@ -33,7 +34,8 @@ const theme = createMuiTheme({
 });
 
 export const App = ({ currentLanguage, onChangeLanguage }) => {
-  const defaultLanguage = process.env.REACT_APP_LOCALE || 'de';
+  // defina aqui sua linguagem padrão
+  const defaultLanguage = process.env.REACT_APP_LOCALE || 'en';
   const locale = currentLanguage || defaultLanguage;
 
   return (
@@ -45,13 +47,16 @@ export const App = ({ currentLanguage, onChangeLanguage }) => {
             <Route path="/" component={Analytics} />
 
             <Switch>
+              {/* Home em inglês */}
               <IntlRoute
                 exact
                 onChangeLanguage={onChangeLanguage}
-                language={defaultLanguage}
+                language="en" // ✅ força inglês na raiz
                 path="/"
                 component={ResumeScreen}
               />
+
+              {/* Páginas específicas por idioma */}
               <IntlRoute
                 exact
                 onChangeLanguage={onChangeLanguage}
@@ -63,7 +68,7 @@ export const App = ({ currentLanguage, onChangeLanguage }) => {
                 exact
                 onChangeLanguage={onChangeLanguage}
                 language="de"
-                path="/de/rirekisho.html"
+                path="/de/lebenslauf.html"
                 component={ResumeScreen}
               />
               <IntlRoute
@@ -73,6 +78,15 @@ export const App = ({ currentLanguage, onChangeLanguage }) => {
                 path="/en/resume.html"
                 component={ResumeScreen}
               />
+              <IntlRoute
+                exact
+                onChangeLanguage={onChangeLanguage}
+                language="it"
+                path="/it/curriculum.html"
+                component={ResumeScreen}
+              />
+
+              {/* 404 */}
               <IntlRoute
                 onChangeLanguage={onChangeLanguage}
                 language="en"

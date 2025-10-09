@@ -4,16 +4,18 @@ import { connect } from 'react-redux';
 import cvPT from '../../data/pt';
 import cvDE from '../../data/de';
 import cvEN from '../../data/en';
+import cvIT from '../../data/it';
 import cvPDFPT from '../../data/pt.pdf';
 import cvPDFDE from '../../data/de.pdf';
 import cvPDFEN from '../../data/en.pdf';
+import cvPDFIT from '../../data/it.pdf';
 import Resume from '../Resume/Resume';
 
 class ResumeScreen extends Component {
   componentWillMount() {
     this.setState({
-      cvs: { pt: cvPT, de: cvDE, en: cvEN },
-      cvPDFs: { pt: cvPDFPT, de: cvPDFDE, en: cvPDFEN },
+      cvs: { pt: cvPT, de: cvDE, en: cvEN, it: cvIT },
+      cvPDFs: { pt: cvPDFPT, de: cvPDFDE, en: cvPDFEN, it: cvPDFIT },
     });
   }
 
