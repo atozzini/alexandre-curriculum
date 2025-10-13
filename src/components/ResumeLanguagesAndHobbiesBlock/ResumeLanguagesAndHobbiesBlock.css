@@ -84,12 +84,27 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
 }
 
 .ResumeLanguagesAndHobbiesBlock-hobby h4 {
-    margin: 4px;
+    margin: 4px 0 0 0;
+    text-align: center;
+    line-height: 1.1;
+    word-break: break-word;
+    hyphens: auto;
+    font-size: 15px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby h4:has(br),
+.ResumeLanguagesAndHobbiesBlock-hobby h4.long-text {
+    font-size: 13px;
 }
 
 .ResumeLanguagesAndHobbiesBlock-hobby .material-icons {

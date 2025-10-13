@@ -1,4 +1,4 @@
-# My resume
+## My resume
 
 My resume in portuguese, english and german, developed with React.
 

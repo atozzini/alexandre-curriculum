@@ -15,93 +15,110 @@ const ResumeLanguagesAndHobbiesBlock = ({
   hobbies,
   hobbyCardStyle,
 }) => (
-  <ScreenBlock id="Resume-languages" className="ResumeLanguagesAndHobbiesBlock">
-    <div className="container">
-      <div className="heading">
-        <h2>
-          <FormattedMessage id="Resume.languages" defaultMessage="Languages" />
-        </h2>
-        <p>
-          <FormattedMessage
-            id="Resume.languagesSubtitle"
-            defaultMessage="I speak"
-          />
-        </p>
-      </div>
-
-      <div className="ResumeLanguagesAndHobbiesBlock-languages">
-        {languages.map(language => (
-          <div
-            className="ResumeLanguagesAndHobbiesBlock-language"
-            key={language.name}
-          >
-            <div className="ResumeLanguagesAndHobbiesBlock-languageTitleAndLevel">
-              <span className="ResumeLanguagesAndHobbiesBlock-languageTitle">
-                {language.name}
-              </span>
-              <br />
-              <span className="ResumeLanguagesAndHobbiesBlock-languageLevel">
-                {' '}
-                {language.level}
-              </span>
-            </div>
-            <DotsProgress
-              maxNumberOfDots={10}
-              numberOfActiveDots={language.levelNumber}
+  <div className="ResumeLanguagesAndHobbiesWrapper">
+    {/* 🔹 SEÇÃO DE LÍNGUAS */}
+    <ScreenBlock
+      id="Resume-languages"
+      className="ResumeLanguagesAndHobbiesBlock"
+    >
+      <div className="container">
+        <div className="heading">
+          <h2>
+            <FormattedMessage
+              id="Resume.languages"
+              defaultMessage="Languages"
             />
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div id="Resume-hobbies">
-      <div className="heading">
-        <h2>
-          <FormattedMessage id="Resume.interests" defaultMessage="Interests" />
-        </h2>
-        <p>
-          <FormattedMessage
-            id="Resume.interestsSubtitle"
-            defaultMessage="What I like"
-          />
-        </p>
-      </div>
-    </div>
-
-    <div className="ResumeLanguagesAndHobbiesBlock-hobbies">
-      {hobbies.map(hobby => (
-        <div
-          key={hobby.name}
-          className="ResumeLanguagesAndHobbiesBlock-hobby-container"
-        >
-          <div className="ResumeLanguagesAndHobbiesBlock-hobby">
-            <Card
-              style={hobbyCardStyle}
-              className="ResumeLanguagesAndHobbiesBlock-hobby-front"
-            >
-              <CardContent>
-                <Icon>{hobby.icon}</Icon>
-                <h4>{hobby.name}</h4>
-              </CardContent>
-            </Card>
-            <Card
-              key={hobby.name}
-              style={hobbyCardStyle}
-              className="ResumeLanguagesAndHobbiesBlock-hobby-back"
-            >
-              <CardContent>
-                {hobby.description && (
-                  <div className="ResumeLanguagesAndHobbiesBlock-hobby-back-description">
-                    {hobby.description}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </div>
+          </h2>
+          <p>
+            <FormattedMessage
+              id="Resume.languagesSubtitle"
+              defaultMessage="I speak"
+            />
+          </p>
         </div>
-      ))}
-    </div>
-  </ScreenBlock>
+
+        <div className="ResumeLanguagesAndHobbiesBlock-languages">
+          {languages.map(language => (
+            <div
+              className="ResumeLanguagesAndHobbiesBlock-language"
+              key={language.name}
+            >
+              <div className="ResumeLanguagesAndHobbiesBlock-languageTitleAndLevel">
+                <span className="ResumeLanguagesAndHobbiesBlock-languageTitle">
+                  {language.name}
+                </span>
+                <br />
+                <span className="ResumeLanguagesAndHobbiesBlock-languageLevel">
+                  {language.level}
+                </span>
+              </div>
+              <DotsProgress
+                maxNumberOfDots={10}
+                numberOfActiveDots={language.levelNumber}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </ScreenBlock>
+
+    {/* 🔹 SEÇÃO DE HOBBIES — agora completamente separada */}
+    <ScreenBlock id="Resume-hobbies" className="ResumeLanguagesAndHobbiesBlock">
+      <div className="container">
+        <div className="heading">
+          <h2>
+            <FormattedMessage
+              id="Resume.interests"
+              defaultMessage="Interests"
+            />
+          </h2>
+          <p>
+            <FormattedMessage
+              id="Resume.interestsSubtitle"
+              defaultMessage="What I like"
+            />
+          </p>
+        </div>
+
+        <div className="ResumeLanguagesAndHobbiesBlock-hobbies">
+          {hobbies.map(hobby => (
+            <div
+              key={hobby.name}
+              className="ResumeLanguagesAndHobbiesBlock-hobby-container"
+            >
+              <div className="ResumeLanguagesAndHobbiesBlock-hobby">
+                <Card
+                  style={hobbyCardStyle}
+                  className="ResumeLanguagesAndHobbiesBlock-hobby-front"
+                >
+                  <CardContent>
+                    <Icon>{hobby.icon}</Icon>
+                    <h4 className={hobby.name.length > 10 ? 'long-text' : ''}>
+                      {hobby.name}
+                    </h4>
+                  </CardContent>
+                </Card>
+
+                <Card
+                  key={hobby.name}
+                  style={hobbyCardStyle}
+                  className="ResumeLanguagesAndHobbiesBlock-hobby-back"
+                >
+                  <CardContent>
+                    {hobby.description && (
+                      <div className="ResumeLanguagesAndHobbiesBlock-hobby-back-description">
+                        {hobby.description}
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </ScreenBlock>
+  </div>
 );
 
 ResumeLanguagesAndHobbiesBlock.propTypes = {

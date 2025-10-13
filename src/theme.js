@@ -42,7 +42,6 @@ const theme = {
   railsColor: makeIconTheme('#651929', RailsIcon, 'Ruby on Rails'),
   reactColor: makeIconTheme('#111', ReactIcon, 'React'),
   javascriptColor: makeIconTheme('#f5c400', JavascriptIcon, 'JavaScript'),
-
   dockerColor: makeIconTheme('#0b253a', DockerIcon, 'Docker'),
   gitColor: makeIconTheme('#2b0c00', GitIcon, 'Git'),
   mysqlColor: makeIconTheme('#004b5c', MySQLIcon, 'MySQL'),

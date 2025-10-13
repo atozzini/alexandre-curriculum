@@ -21,6 +21,7 @@ export default {
     toolsSubtitle: 'Meine bevorzugten Werkzeuge im Alltag',
     showMore: 'Mehr anzeigen',
     showLess: 'Weniger anzeigen',
+    database: 'Datenbank',
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Verbleibende Tage bis Japan',
