@@ -23,13 +23,6 @@ export default {
     showLess: 'Ver menos',
     database: 'Banco de Dados',
   },
-  WaitingUntilJapanScreen: {
-    remainingDaysUntilJapan: 'Dias restantes até o Japão',
-    from: 'De',
-    until: 'Até',
-    days: 'Dias',
-    Percent: 'Porcentagem',
-  },
   SimpleBottomNavigation: {
     aboutMe: 'Sobre mim',
     home: 'Início',
