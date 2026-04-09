@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
@@ -13,16 +11,12 @@ import de from 'react-intl/locale-data/de';
 import it from 'react-intl/locale-data/it';
 
 import languages from './i18n';
-
 import './App.css';
 
-import IntlRoute from './IntlRoute';
 import Analytics from './components/Analytics/Analytics';
-import NotFoundScreen from './containers/NotFoundScreen/NotFoundScreen';
+import NotFound from './containers/NotFound/NotFound';
 import ResumeScreen from './containers/ResumeScreen/ResumeScreen';
 import Meta from './containers/Meta/Meta';
-import { changeLanguage } from './actions';
-import { history } from './store/configureStore';
 
 addLocaleData([...en, ...pt, ...de, ...it]);
 
@@ -33,87 +27,55 @@ const theme = createMuiTheme({
   },
 });
 
-export const App = ({ currentLanguage, onChangeLanguage }) => {
-  // defina aqui sua linguagem padrão
-  const defaultLanguage = process.env.REACT_APP_LOCALE || 'en';
-  const locale = currentLanguage || defaultLanguage;
+const defaultLanguage = process.env.REACT_APP_LOCALE || 'pt';
 
-  return (
-    <IntlProvider locale={locale} key={locale} messages={languages[locale]}>
-      <MuiThemeProvider theme={theme}>
-        <ConnectedRouter history={history}>
-          <div className="App">
-            <Meta locale={locale} />
-            <Route path="/" component={Analytics} />
+const LocaleApp = ({ language }) => (
+  <IntlProvider locale={language} key={language} messages={languages[language]}>
+    <div className="App">
+      <Meta locale={language} />
+      <Route path="/" component={Analytics} />
+      <ResumeScreen language={language} />
+    </div>
+  </IntlProvider>
+);
 
-            <Switch>
-              {/* Home em inglês */}
-              <IntlRoute
-                exact
-                onChangeLanguage={onChangeLanguage}
-                language="en" // ✅ força inglês na raiz
-                path="/"
-                component={ResumeScreen}
-              />
-
-              {/* Páginas específicas por idioma */}
-              <IntlRoute
-                exact
-                onChangeLanguage={onChangeLanguage}
-                language="pt"
-                path="/pt/cv.html"
-                component={ResumeScreen}
-              />
-              <IntlRoute
-                exact
-                onChangeLanguage={onChangeLanguage}
-                language="de"
-                path="/de/lebenslauf.html"
-                component={ResumeScreen}
-              />
-              <IntlRoute
-                exact
-                onChangeLanguage={onChangeLanguage}
-                language="en"
-                path="/en/resume.html"
-                component={ResumeScreen}
-              />
-              <IntlRoute
-                exact
-                onChangeLanguage={onChangeLanguage}
-                language="it"
-                path="/it/curriculum.html"
-                component={ResumeScreen}
-              />
-
-              {/* 404 */}
-              <IntlRoute
-                onChangeLanguage={onChangeLanguage}
-                language="en"
-                component={NotFoundScreen}
-              />
-            </Switch>
-          </div>
-        </ConnectedRouter>
-      </MuiThemeProvider>
-    </IntlProvider>
-  );
+LocaleApp.propTypes = {
+  language: PropTypes.string.isRequired,
 };
 
-App.propTypes = {
-  currentLanguage: PropTypes.string,
-  onChangeLanguage: PropTypes.func.isRequired,
-};
+const App = () => (
+  <BrowserRouter>
+    <MuiThemeProvider theme={theme}>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => <LocaleApp language={defaultLanguage} />}
+        />
+        <Route
+          exact
+          path="/pt/cv.html"
+          render={() => <LocaleApp language="pt" />}
+        />
+        <Route
+          exact
+          path="/de/lebenslauf.html"
+          render={() => <LocaleApp language="de" />}
+        />
+        <Route
+          exact
+          path="/en/resume.html"
+          render={() => <LocaleApp language="en" />}
+        />
+        <Route
+          exact
+          path="/it/curriculum.html"
+          render={() => <LocaleApp language="it" />}
+        />
+        <Route component={NotFound} />
+      </Switch>
+    </MuiThemeProvider>
+  </BrowserRouter>
+);
 
-const mapStateToProps = state => ({
-  currentLanguage: state.language.lang,
-});
-
-const mapActionsToProps = dispatch => ({
-  onChangeLanguage: lang => dispatch(changeLanguage(lang)),
-});
-
-export default connect(
-  mapStateToProps,
-  mapActionsToProps,
-)(App);
+export default App;
