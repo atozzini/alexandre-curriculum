@@ -27,7 +27,7 @@ export default {
   phoneNumbers: [
     {
       type: 'Persönlich',
-      number: '+55 (19) 99959-1111',
+      number: '+55 (48) 93618-4102',
     },
   ],
   imAccounts: [

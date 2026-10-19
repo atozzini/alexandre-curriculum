@@ -10,9 +10,7 @@ import de from 'react-intl/locale-data/de';
 import it from 'react-intl/locale-data/it';
 
 import languages from './i18n';
-import './App.css';
 
-import Analytics from './components/Analytics/Analytics';
 import NotFound from './containers/NotFound/NotFound';
 import ResumeScreen from './containers/ResumeScreen/ResumeScreen';
 import Meta from './containers/Meta/Meta';
@@ -56,7 +54,6 @@ const App = () => (
             <MuiThemeProvider theme={theme}>
               <div className="App">
                 <Meta locale={language} />
-                <Route path="/" component={Analytics} />
                 <Switch>
                   <Route
                     exact

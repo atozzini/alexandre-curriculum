@@ -21,7 +21,7 @@ export default {
   websites: [
     { type: 'Linkedin', url: 'https://www.linkedin.com/in/alexandre-tozzini/' },
   ],
-  phoneNumbers: [{ type: 'Personal', number: '+55 (19) 99959-1111' }],
+  phoneNumbers: [{ type: 'Personal', number: '+55 (48) 93618-4102' }],
   imAccounts: [{ type: 'Skype', name: 'alexandre.tozzini' }],
   snsAccounts: [
     {
