@@ -8,10 +8,11 @@ export default {
   firstName: 'Alexandre',
   lastName: 'Tozzini',
   emailAddress: 'alexandre.tozzini@gmail.com',
-  headline: 'Engenheiro de Software Full-Stack',
+  headline:
+    'Desenvolvedor Ruby on Rails & Golang | Engenheiro de Software Full-Stack | Certified Scrum Master',
   summary: `
-    Profissional de tecnologia com 10 anos de experiência, incluindo 8 meses de liderança em equipes ágeis utilizando Scrum e Kanban. Especializado em AWS (EC2, RDS), com habilidades em Jira, GitHub, Visual Studio Code, Elasticsearch, Sidekiq e Docker. Proficiente em Ruby on Rails, React.js e tecnologias web (JavaScript, CSS, HTML), com sólida experiência em bancos de dados (SQL Server, PostgreSQL, Oracle 11g, MySQL). Competente em Linux (Debian, Ubuntu, Manjaro Arch) e com proficiência avançada em Microsoft Office. Histórico comprovado em projetos de Educação e Saúde pública, buscando atuar em projetos de impacto e relevância.<br /><br />
-    Minha stack favorita: Ruby on Rails, Docker, ReactJS, Postgres.
+    Engenheiro de software com mais de 10 anos de experiência construindo sistemas para os setores de Educação, Saúde, Previdência e Gestão de Patrimônio. Forte experiência com Ruby on Rails, Golang (Clean Architecture, DDD) e React.js, com sólido conhecimento em bancos de dados (PostgreSQL, MySQL, Oracle PL/SQL, SQL Server). Experiência implantando e gerenciando aplicações na AWS (EC2, RDS, Amplify, Lambda, CloudFront), com Docker, GitHub, Scrum/Kanban, testes automatizados e ambientes Linux no dia a dia. Tecnólogo em Análise e Desenvolvimento de Sistemas, MBA em Big Data e Gestão de Dados, e Certified ScrumMaster® (CSM®).<br /><br />
+    Minha stack favorita: Ruby on Rails, Golang, Docker, ReactJS, Postgres.
   `,
   pictureUrl: '/img/me.jpg',
   dateOfBirth: '1985-04-06',
@@ -36,7 +37,35 @@ export default {
 
   positions: [
     {
-      title: 'IT Business Analyst',
+      title: 'Engenheiro de Software | Desenvolvedor Full-Stack',
+      keywords: [
+        { name: 'Ruby on Rails' },
+        { name: 'Docker' },
+        { name: 'MySQL' },
+        { name: 'Linux' },
+        { name: 'Sidekiq' },
+        { name: 'Prometheus' },
+      ],
+      summary: `
+        Manutenção e evolução de um portfólio de 4 sistemas Rails interligados para uma empresa de gestão de condomínios.<br />
+        Manutenção de legado em Rails 2 ao lado de novas funcionalidades em Rails 7, infraestrutura e monitoramento.
+      `,
+      more: `
+        <p>
+          Mantém um sistema legado de gestão de condomínios (Rails 2 / Ruby 1.8.7) e desenvolve novas funcionalidades em aplicações Rails 7 modernas com jobs em background via Sidekiq.<br />
+          Integra APIs do fisco para emissão de notas fiscais eletrônicas, além de ERPs, CRMs e sistemas de RH/folha de pagamento externos via SOAP e OAuth2.<br />
+          Administra servidores Linux e Docker/Docker Compose em múltiplos ambientes, e gerencia MySQL com controle de acesso em nível de rede.<br />
+          Monitora a infraestrutura com Zabbix, Loki e Prometheus, e resolve incidentes críticos, incluindo kernel panics causados por instabilidade em sistemas de arquivos de rede legados.
+        </p>
+      `,
+      startDate: '2025',
+      endDate: 'Hoje',
+      isCurrent: true,
+      company: 'Plathanus Software & Design',
+      picture: 'logo-plathanus.png',
+    },
+    {
+      title: 'Analista de Negócios de TI | Desenvolvedor de Software',
       keywords: [
         { name: 'Golang' },
         { name: 'Clean Architecture' },
@@ -46,19 +75,19 @@ export default {
         { name: 'PostgreSQL' },
       ],
       summary: `
-        Desenvolvimento de APIs em Golang e aplicações web em Angular.<br />
-        Soluções críticas em Oracle PL/SQL e PostgreSQL.
+        APIs em Golang seguindo Clean Architecture e DDD, e aplicações web em Angular para uma sociedade de previdência complementar.<br />
+        Soluções críticas em PL/SQL em Oracle e PostgreSQL para sistemas previdenciários de alta criticidade.
       `,
       more: `
         <p>
-          Atuação em empresa de previdência complementar com foco em sistemas de gestão de benefícios.<br />
-          Responsável por manutenção de sistemas legados, integração de grandes volumes de dados e suporte a usuários internos.<br />
-          Uso de Docker, GitHub/Bitbucket, testes automatizados e metodologias ágeis para garantir qualidade no ciclo de vida do software.
+          Construção de APIs em Golang utilizando Clean Architecture e Domain-Driven Design, e desenvolvimento de aplicações web com Angular.<br />
+          Implementação de soluções em PL/SQL em bancos Oracle e uso de PostgreSQL para sistemas previdenciários de alta criticidade.<br />
+          Containerização de aplicações com Docker, controle de versão com Bitbucket e GitHub, atendimento de chamados de TI e testes automatizados ao longo do ciclo de desenvolvimento.
         </p>
       `,
       startDate: '2025',
-      endDate: 'Hoje',
-      isCurrent: true,
+      endDate: '2025',
+      isCurrent: false,
       company: 'PREVIG',
       picture: 'logo-previg.png',
     },
@@ -137,7 +166,7 @@ export default {
       picture: 'logo-vindi.png',
     },
     {
-      title: 'Full-stack Software Engineer',
+      title: 'Tech Lead | Engenheiro de Software Full-Stack',
       keywords: [
         { name: 'Ruby on Rails' },
         { name: 'MySQL' },
@@ -208,10 +237,10 @@ export default {
 
   interests: '',
   languages: [
-    { name: 'Português', level: 'Nativo', levelNumber: 10 },
-    { name: 'Inglês', level: 'Profissional', levelNumber: 6 },
-    { name: 'Alemão', level: 'Intermediário', levelNumber: 5 },
-    { name: 'Italiano', level: 'Básico', levelNumber: 3 },
+    { name: 'Português', level: 'Nativo ou bilíngue', levelNumber: 10 },
+    { name: 'Inglês', level: 'Profissional', levelNumber: 7 },
+    { name: 'Alemão', level: 'Profissional', levelNumber: 7 },
+    { name: 'Italiano', level: 'Elementar', levelNumber: 2 },
   ],
   skills: [
     {
@@ -230,6 +259,11 @@ export default {
       category: { name: 'Linguagens' },
     },
     {
+      name: 'Python',
+      language: { name: 'Python', style: 'python' },
+      category: { name: 'Linguagens' },
+    },
+    {
       name: 'PL/SQL',
       language: { name: 'SQL', style: 'others' },
       category: { name: 'Linguagens' },
@@ -239,16 +273,19 @@ export default {
       language: { name: 'SQL', style: 'others' },
       category: { name: 'Bancos de Dados' },
     },
-    { name: 'Docker', category: { name: 'Ferramentas' } },
-    { name: 'GitHub/GitLab/Bitbucket', category: { name: 'Ferramentas' } },
-    { name: 'Scrum/Kanban', category: { name: 'Metodologias Ágeis' } },
+    {
+      name: 'MySQL',
+      language: { name: 'SQL', style: 'others' },
+      category: { name: 'Bancos de Dados' },
+    },
   ],
   tools:
     'Sistemas operacionais: Linux (mais de 10 anos)<br />IDE: VSCode / PhpStorm / RubyMine<br />Containerização: Docker<br />Integração Contínua: GitHub Actions / Gitlab-CI<br />Gerenciamento de Projetos: Jira / Gitlab<br />Controle de versão: GitHub / Gitlab / Bitbucket',
   educations: [
     {
-      schoolName: 'Faculdade VINCIT',
+      schoolName: 'Faculdade FACINT',
       fieldOfStudy: 'MBA em Big Data e Inteligência na Gestão de Dados',
+      picture: 'logo-facint.png',
       startDate: '2020',
       endDate: '2023',
       degree: 'MBA',
@@ -262,6 +299,7 @@ export default {
     {
       schoolName: 'Fatec Mogi Mirim',
       fieldOfStudy: 'Tecnologia em Análise e Desenvolvimento de Sistemas',
+      picture: 'logo-fatec.png',
       startDate: '2014',
       endDate: '2016',
       degree: 'Graduação Tecnológica',
@@ -284,6 +322,17 @@ export default {
         { name: 'Estruturas' },
       ],
       summary: 'Formação interrompida para migração para a área de TI.',
+    },
+  ],
+
+  certifications: [
+    {
+      name: 'Certified ScrumMaster® (CSM®)',
+      issuer: 'Scrum Alliance',
+      year: '2021',
+      picture: 'logo-scrum-alliance.png',
+      credentialId: '1420227',
+      credentialUrl: 'https://app.badgecert.com/public/badges/yzlqasmo',
     },
   ],
 

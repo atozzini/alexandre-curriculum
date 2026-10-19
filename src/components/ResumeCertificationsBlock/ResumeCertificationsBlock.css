@@ -1,0 +1,40 @@
+.ResumeCertificationsBlock-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ResumeCertificationsBlock-list > div,
+.ResumeCertificationsBlock-list > a {
+  width: 260px;
+  text-align: center;
+}
+
+.ResumeCertificationsBlock-list h3 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #000;
+}
+
+.ResumeCertificationsBlock-list p {
+  color: #555;
+}
+
+.ResumeCertificationsBlock-credentialId {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.ResumeCertificationsBlock-link {
+  text-decoration: none;
+  display: block;
+}
+
+@media only screen and (max-width: 480px) {
+  .ResumeCertificationsBlock-list > div,
+  .ResumeCertificationsBlock-list > a {
+    width: 90%;
+  }
+}

@@ -7,6 +7,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import WorkIcon from '@material-ui/icons/Work';
 import FaceIcon from '@material-ui/icons/Face';
 import SchoolIcon from '@material-ui/icons/School';
+import CardMembershipIcon from '@material-ui/icons/CardMembership';
 import SettingsIcon from '@material-ui/icons/SettingsApplications';
 import LanguageIcon from '@material-ui/icons/Language';
 import ToysIcon from '@material-ui/icons/Toys';
@@ -43,6 +44,11 @@ const buttons = [
     name: 'Resume-education',
     icon: <SchoolIcon />,
     offset: -16,
+  },
+  {
+    label: 'SimpleBottomNavigation.certifications',
+    name: 'Resume-certifications',
+    icon: <CardMembershipIcon />,
   },
   {
     label: 'SimpleBottomNavigation.skills',

@@ -11,8 +11,15 @@ import ShowMore from '../../components/ShowMore/ShowMore';
 
 import './ResumeWorkAndEducationBlock.css';
 
+const TODAY_LABELS = ['Today', 'Hoje', 'Heute', 'Oggi'];
+
+const resolvePicture = picture => {
+  if (!picture) return null;
+  return picture.startsWith('/img/') ? picture : `/img/${picture}`;
+};
+
 const formatPeriod = (start, end, formatMessage) => {
-  const isToday = end === 'Today' || end === "Aujourd'hui" || end === '今';
+  const isToday = TODAY_LABELS.includes(end);
 
   const period =
     (isToday ? new Date().getFullYear() : parseInt(end, 10)) -
@@ -58,16 +65,12 @@ const ResumeWorkAndEducationBlock = ({
         </p>
       </div>
 
-      <VerticalTimeline>
+      <VerticalTimeline animate={false}>
         {positions.map((position, i) => {
-          let picture = null;
-          if (position.picture) {
-            picture = position.picture.startsWith('/img/')
-              ? position.picture
-              : `/img/${position.picture}`;
-          }
+          const picture = resolvePicture(position.picture);
           return (
             <VerticalTimelineElement
+              position={i % 2 ? 'left' : 'right'}
               className="Resume-position"
               key={i} // eslint-disable-line react/no-array-index-key
               icon={<WorkIcon />}
@@ -110,29 +113,37 @@ const ResumeWorkAndEducationBlock = ({
       </VerticalTimeline>
 
       <div id="Resume-education">
-        <VerticalTimeline>
-          {educations.map((education, i) => (
-            <VerticalTimelineElement
-              position={i % 2 ? 'left' : 'right'}
-              id=""
-              className="Resume-position"
-              key={i} // eslint-disable-line react/no-array-index-key
-              icon={<SchoolIcon />}
-              iconStyle={educationIconStyle}
-              date={formatPeriod(
-                education.startDate,
-                education.endDate,
-                formatMessage,
-              )}
-            >
-              <h3 className="vertical-timeline-element-title">
-                {education.fieldOfStudy}
-              </h3>
-              <h4 className="vertical-timeline-element-subtitle">
-                {education.degree}
-              </h4>
-              {education.activities &&
-                !Array.isArray(education.activities) && (
+        <VerticalTimeline animate={false}>
+          {educations.map((education, i) => {
+            const picture = resolvePicture(education.picture);
+            return (
+              <VerticalTimelineElement
+                position={i % 2 ? 'left' : 'right'}
+                id=""
+                className="Resume-position"
+                key={i} // eslint-disable-line react/no-array-index-key
+                icon={<SchoolIcon />}
+                iconStyle={educationIconStyle}
+                date={formatPeriod(
+                  education.startDate,
+                  education.endDate,
+                  formatMessage,
+                )}
+              >
+                {picture && (
+                  <img
+                    className="ResumeWorkAndEducationBlock-picture"
+                    alt=""
+                    src={picture}
+                  />
+                )}
+                <h3 className="vertical-timeline-element-title">
+                  {education.fieldOfStudy}
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                  {education.degree}
+                </h4>
+                {education.activities && !Array.isArray(education.activities) && (
                   <p>
                     <span
                       /* eslint-disable-next-line react/no-danger */
@@ -140,19 +151,19 @@ const ResumeWorkAndEducationBlock = ({
                     />
                   </p>
                 )}
-              {education.activities &&
-                Array.isArray(education.activities) && (
+                {education.activities && Array.isArray(education.activities) && (
                   <div className="ResumeWorkAndEducationBlock-keywords">
                     {education.activities.map((activity, j) => (
                       <span key={j}> {activity.name} </span> // eslint-disable-line react/no-array-index-key
                     ))}
                   </div>
                 )}
-              {education.summary && (
-                <p dangerouslySetInnerHTML={{ __html: education.summary }} />
-              )}
-            </VerticalTimelineElement>
-          ))}
+                {education.summary && (
+                  <p dangerouslySetInnerHTML={{ __html: education.summary }} />
+                )}
+              </VerticalTimelineElement>
+            );
+          })}
         </VerticalTimeline>
       </div>
     </div>

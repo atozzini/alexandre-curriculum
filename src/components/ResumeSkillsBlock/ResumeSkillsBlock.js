@@ -79,15 +79,17 @@ const ResumeSkillsBlock = ({ skills }) => {
         {/* Lista de skills */}
         <div className="ResumeSkillsBlock-skills">
           {skills.map(skillCategory => {
+            const firstSkill = skillCategory && skillCategory[0];
             const language =
-              (skillCategory &&
-                skillCategory[0] &&
-                skillCategory[0].language &&
-                skillCategory[0].language.name) ||
+              (firstSkill && firstSkill.language && firstSkill.language.name) ||
               '';
+            const title =
+              language ||
+              (firstSkill && firstSkill.category && firstSkill.category.name) ||
+              'Others';
 
             const meta = getCategoryData(language);
-            const categoryKey = `${language}-${skillCategory.length}`;
+            const categoryKey = `${title}-${skillCategory.length}`;
 
             return (
               <Card key={categoryKey}>
@@ -138,7 +140,7 @@ const ResumeSkillsBlock = ({ skills }) => {
                         defaultMessage="Database"
                       />
                     ) : (
-                      language || 'Others'
+                      title
                     )}
                   </h3>
 
@@ -175,7 +177,7 @@ const ResumeSkillsBlock = ({ skills }) => {
             <li>Postman & Insomnia</li>
             <li>Jira, Trello, Notion</li>
             <li>Linux (Ubuntu, Debian, Manjaro)</li>
-            <li>AWS (EC2, RDS)</li>
+            <li>AWS (EC2, RDS, S3, Amplify)</li>
             <li>CI/CD & Automated Testing</li>
           </ul>
         </div>

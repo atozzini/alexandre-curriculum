@@ -8,10 +8,11 @@ export default {
   firstName: 'Alexandre',
   lastName: 'Tozzini',
   emailAddress: 'alexandretozzini@gmail.com',
-  headline: 'Ingegnere del Software Full-Stack',
+  headline:
+    'Sviluppatore Ruby on Rails & Golang | Ingegnere del Software Full-Stack | Certified Scrum Master',
   summary: `
-    Professionista IT con 10 anni di esperienza, inclusi 8 mesi di leadership in team agili con Scrum e Kanban. Specializzato in AWS (EC2, RDS), esperto in Jira, GitHub, Visual Studio Code, Elasticsearch, Sidekiq e Docker. Competente in Ruby on Rails, React.js e tecnologie web (JavaScript, CSS, HTML), con una forte conoscenza dei database (SQL Server, PostgreSQL, Oracle 11g, MySQL). Esperienza in Linux (Debian, Ubuntu, Manjaro Arch) e conoscenze avanzate in Microsoft Office. Successi comprovati in progetti di Educazione e Sanità pubblica, in cerca di ruoli di sviluppo in progetti ad alto impatto.<br /><br />
-    Il mio stack preferito: Ruby on Rails, Docker, ReactJS, Postgres.
+    Ingegnere del software con oltre 10 anni di esperienza nella costruzione di sistemi per i settori Educazione, Sanità, Previdenza e Gestione Immobiliare. Solida esperienza con Ruby on Rails, Golang (Clean Architecture, DDD) e React.js, con una forte conoscenza di database (PostgreSQL, MySQL, Oracle PL/SQL, SQL Server). Esperienza nel deploy e nella gestione di applicazioni su AWS (EC2, RDS, Amplify, Lambda, CloudFront), con Docker, GitHub, Scrum/Kanban, test automatizzati e ambienti Linux quotidianamente. Tecnologo in Analisi e Sviluppo di Sistemi, MBA in Big Data e Gestione dei Dati, e Certified ScrumMaster® (CSM®).<br /><br />
+    Il mio stack preferito: Ruby on Rails, Golang, Docker, ReactJS, Postgres.
   `,
   pictureUrl: '/img/me.jpg',
   dateOfBirth: '1985-04-06',
@@ -59,7 +60,35 @@ export default {
   ],
   positions: [
     {
-      title: 'IT Business Analyst',
+      title: 'Software Engineer | Full-Stack Developer',
+      keywords: [
+        { name: 'Ruby on Rails' },
+        { name: 'Docker' },
+        { name: 'MySQL' },
+        { name: 'Linux' },
+        { name: 'Sidekiq' },
+        { name: 'Prometheus' },
+      ],
+      summary: `
+        Manutenzione e sviluppo di un portfolio di 4 sistemi Rails collegati tra loro per un'azienda di gestione condominiale.<br />
+        Manutenzione del legacy Rails 2 insieme a nuove funzionalità in Rails 7, infrastruttura e monitoraggio.
+      `,
+      more: `
+        <p>
+          Mantiene un sistema legacy di gestione condominiale (Rails 2 / Ruby 1.8.7) e sviluppa nuove funzionalità su applicazioni Rails 7 moderne con job in background tramite Sidekiq.<br />
+          Integra le API dell'agenzia delle entrate per l'emissione di fatture elettroniche, oltre a ERP, CRM e sistemi HR/payroll esterni tramite SOAP e OAuth2.<br />
+          Amministra server Linux e Docker/Docker Compose in più ambienti e gestisce MySQL con controllo degli accessi a livello di rete.<br />
+          Monitora l'infrastruttura con Zabbix, Loki e Prometheus e risolve incidenti critici, inclusi kernel panic causati da instabilità del file system di rete su server legacy.
+        </p>
+      `,
+      startDate: '2025',
+      endDate: 'Oggi',
+      isCurrent: true,
+      company: 'Plathanus Software & Design',
+      picture: 'logo-plathanus.png',
+    },
+    {
+      title: 'IT Business Analyst | Sviluppatore Software',
       keywords: [
         { name: 'Golang' },
         { name: 'Clean Architecture' },
@@ -69,19 +98,19 @@ export default {
         { name: 'PostgreSQL' },
       ],
       summary: `
-        Sviluppo di API in Golang e applicazioni web in Angular.<br />
-        Soluzioni in Oracle PL/SQL e PostgreSQL.
+        API in Golang secondo Clean Architecture e DDD, e applicazioni web in Angular per un fondo pensione.<br />
+        Soluzioni critiche in PL/SQL su Oracle e PostgreSQL per sistemi pensionistici ad alta criticità.
       `,
       more: `
         <p>
-          Attività in un fondo pensione con focus su sistemi di gestione.<br />
-          Responsabile della manutenzione di sistemi legacy, integrazione dati e supporto utenti.<br />
-          Utilizzo di Docker, GitHub/Bitbucket, test automatizzati e metodologie agili.
+          Sviluppo di API in Golang con Clean Architecture e Domain-Driven Design, e di applicazioni web con Angular.<br />
+          Implementazione di soluzioni PL/SQL su database Oracle e utilizzo di PostgreSQL per sistemi pensionistici ad alta criticità.<br />
+          Containerizzazione delle applicazioni con Docker, controllo di versione con Bitbucket e GitHub, gestione di ticket di supporto IT e test automatizzati durante tutto il ciclo di sviluppo.
         </p>
       `,
       startDate: '2025',
-      endDate: 'Oggi',
-      isCurrent: true,
+      endDate: '2025',
+      isCurrent: false,
       company: 'PREVIG',
       picture: 'logo-previg.png',
     },
@@ -163,7 +192,7 @@ export default {
       picture: 'logo-vindi.png',
     },
     {
-      title: 'Full-Stack Software Engineer',
+      title: 'Tech Lead | Ingegnere del Software Full-Stack',
       keywords: [
         { name: 'Ruby on Rails' },
         { name: 'MySQL' },
@@ -236,9 +265,9 @@ export default {
   interests: '',
   languages: [
     { name: 'Portoghese', level: 'Madrelingua', levelNumber: 10 },
-    { name: 'Inglese', level: 'Competenza professionale', levelNumber: 6 },
-    { name: 'Tedesco', level: 'Intermedio', levelNumber: 5 },
-    { name: 'Italiano', level: 'Base', levelNumber: 3 },
+    { name: 'Inglese', level: 'Competenza professionale', levelNumber: 7 },
+    { name: 'Tedesco', level: 'Competenza professionale', levelNumber: 7 },
+    { name: 'Italiano', level: 'Conoscenza elementare', levelNumber: 2 },
   ],
   skills: [
     {
@@ -257,6 +286,11 @@ export default {
       category: { name: 'Linguaggi' },
     },
     {
+      name: 'Python',
+      language: { name: 'Python', style: 'python' },
+      category: { name: 'Linguaggi' },
+    },
+    {
       name: 'PL/SQL',
       language: { name: 'SQL', style: 'others' },
       category: { name: 'Linguaggi' },
@@ -267,24 +301,18 @@ export default {
       category: { name: 'Basi di Dati' },
     },
     {
-      name: 'Docker',
-      category: { name: 'Strumenti' },
-    },
-    {
-      name: 'GitHub/GitLab/Bitbucket',
-      category: { name: 'Strumenti' },
-    },
-    {
-      name: 'Scrum/Kanban',
-      category: { name: 'Metodologie Agile' },
+      name: 'MySQL',
+      language: { name: 'SQL', style: 'others' },
+      category: { name: 'Basi di Dati' },
     },
   ],
   tools:
     'Sistemi operativi: Linux (oltre 10 anni)<br />IDE: VSCode / PhpStorm / RubyMine<br />Containerizzazione: Docker<br />Integrazione Continua: GitHub Actions / Gitlab-CI<br />Gestione Progetti: Jira / Gitlab<br />Controllo Versione: GitHub / Gitlab / Bitbucket',
   educations: [
     {
-      schoolName: 'Faculdade VINCIT',
+      schoolName: 'Faculdade FACINT',
       fieldOfStudy: 'MBA in Big Data e Intelligenza nella Gestione dei Dati',
+      picture: 'logo-facint.png',
       startDate: '2020',
       endDate: '2023',
       degree: 'MBA',
@@ -298,6 +326,7 @@ export default {
     {
       schoolName: 'Fatec Mogi Mirim',
       fieldOfStudy: 'Tecnologia in Analisi e Sviluppo di Sistemi',
+      picture: 'logo-fatec.png',
       startDate: '2014',
       endDate: '2016',
       degree: 'Laurea Tecnologica',
@@ -320,6 +349,16 @@ export default {
         { name: 'Strutture' },
       ],
       summary: 'Formazione interrotta per passare al settore IT.',
+    },
+  ],
+  certifications: [
+    {
+      name: 'Certified ScrumMaster® (CSM®)',
+      issuer: 'Scrum Alliance',
+      year: '2021',
+      picture: 'logo-scrum-alliance.png',
+      credentialId: '1420227',
+      credentialUrl: 'https://app.badgecert.com/public/badges/yzlqasmo',
     },
   ],
   volunteer: [],

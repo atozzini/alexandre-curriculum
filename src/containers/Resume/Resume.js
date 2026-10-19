@@ -9,6 +9,7 @@ import ResumeAppBar from '../../components/ResumeAppBar/ResumeAppBar';
 import ResumeHomeBlock from '../../components/ResumeHomeBlock/ResumeHomeBlock';
 import ResumeAboutMeBlock from '../../components/ResumeAboutMeBlock/ResumeAboutMeBlock';
 import ResumeWorkAndEducationBlock from '../../components/ResumeWorkAndEducationBlock/ResumeWorkAndEducationBlock';
+import ResumeCertificationsBlock from '../../components/ResumeCertificationsBlock/ResumeCertificationsBlock';
 import ResumeSkillsBlock from '../../components/ResumeSkillsBlock/ResumeSkillsBlock';
 import ResumeLanguagesAndHobbiesBlock from '../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
@@ -22,10 +23,12 @@ class Resume extends Component {
 
     const skillsByLanguages = skills.reduce((obj, item) => {
       const newObj = obj;
-      if (item.language) {
-        newObj[item.language.name] = newObj[item.language.name] || [];
-        newObj[item.language.name].push(item);
-      }
+      const key =
+        (item.language && item.language.name) ||
+        (item.category && item.category.name) ||
+        'Others';
+      newObj[key] = newObj[key] || [];
+      newObj[key].push(item);
       return newObj;
     }, {});
 
@@ -105,6 +108,8 @@ class Resume extends Component {
           formatMessage={formatMessage}
         />
 
+        <ResumeCertificationsBlock certifications={this.props.certifications} />
+
         <ResumeSkillsBlock skills={skills} tools={this.props.tools} />
 
         <ResumeLanguagesAndHobbiesBlock
@@ -136,6 +141,7 @@ Resume.propTypes = {
   languages: PropTypes.arrayOf(PropTypes.object),
   skills: PropTypes.arrayOf(PropTypes.object),
   educations: PropTypes.arrayOf(PropTypes.object),
+  certifications: PropTypes.arrayOf(PropTypes.object),
   hobbies: PropTypes.arrayOf(PropTypes.object),
   cvPDF: PropTypes.string,
   tools: PropTypes.string,
@@ -154,6 +160,7 @@ Resume.defaultProps = {
   languages: [],
   skills: [],
   educations: [],
+  certifications: [],
   hobbies: [],
 };
 

@@ -6,7 +6,7 @@
 }
 
 .ResumeSkillsBlock-skills>div {
-    width: 23%;
+    width: calc(20% - 16px);
     text-align: center;
     margin-bottom: 20px;
 }

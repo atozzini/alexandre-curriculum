@@ -42,3 +42,13 @@
 .ResumeWorkAndEducationBlock-keywords {
   max-width: calc(100% - 50px);
 }
+
+.ResumeWorkAndEducationBlock .vertical-timeline-element {
+  margin: 1.5em 0;
+}
+
+@media only screen and (min-width: 1170px) {
+  .ResumeWorkAndEducationBlock .vertical-timeline-element {
+    margin: 2em 0;
+  }
+}
