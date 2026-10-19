@@ -42,7 +42,9 @@ const ResumeCertificationsBlock = ({ certifications }) => (
               <CardContent>
                 <Avatar
                   style={{
-                    background: appTheme.othersColor.style.background,
+                    background: picture
+                      ? '#fff'
+                      : appTheme.othersColor.style.background,
                     color: appTheme.othersColor.style.color,
                     width: 80,
                     height: 80,
@@ -53,9 +55,13 @@ const ResumeCertificationsBlock = ({ certifications }) => (
                     <img
                       src={picture}
                       alt=""
-                      width="80"
-                      height="80"
-                      style={{ objectFit: 'cover' }}
+                      style={{
+                        display: 'block',
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '50%',
+                        objectFit: 'cover',
+                      }}
                     />
                   ) : (
                     <CardMembershipIcon style={{ fontSize: 40 }} />
