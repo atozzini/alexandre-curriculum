@@ -3,7 +3,7 @@ export default {
     im: '{fullName}',
     aboutMe: 'Über mich',
     aboutMeSubtitle: 'Eine kurze Einführung über mich',
-    download: 'Herunterladen',
+    download: 'Lebenslauf',
     hireMe: 'Einstellen',
     workExperienceAndEducation: 'Berufserfahrung und Ausbildung',
     workExperienceAndEducationSubtitle:
