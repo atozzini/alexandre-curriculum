@@ -8,7 +8,7 @@ export default {
   },
   firstName: 'Alexandre',
   lastName: 'Tozzini',
-  emailAddress: 'alexandre.tozzini@gmail.com',
+  emailAddress: 'tozzini@proton.me',
   headline:
     'Ruby on Rails & Golang Developer | Full-Stack Software Engineer | Certified Scrum Master',
   summary: `

@@ -72,7 +72,7 @@ const ResumeAboutMeBlock = ({
               </Button>
               &nbsp;&nbsp;&nbsp;
               <Button
-                href="mailto:alexandretozzini@gmail.com"
+                href="mailto:tozzini@proton.me"
                 variant="contained"
                 color="secondary"
               >
