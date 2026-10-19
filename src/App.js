@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
@@ -29,52 +28,89 @@ const theme = createMuiTheme({
 
 const defaultLanguage = process.env.REACT_APP_LOCALE || 'pt';
 
-const LocaleApp = ({ language }) => (
-  <IntlProvider locale={language} key={language} messages={languages[language]}>
-    <div className="App">
-      <Meta locale={language} />
-      <Route path="/" component={Analytics} />
-      <ResumeScreen language={language} />
-    </div>
-  </IntlProvider>
-);
-
-LocaleApp.propTypes = {
-  language: PropTypes.string.isRequired,
+const languageByPath = {
+  '/pt': 'pt',
+  '/pt/cv.html': 'pt',
+  '/de': 'de',
+  '/de/lebenslauf.html': 'de',
+  '/en': 'en',
+  '/en/resume.html': 'en',
+  '/it': 'it',
+  '/it/curriculum.html': 'it',
 };
 
+// Wraps the whole Switch (including the 404 route) in a single IntlProvider,
+// since `injectIntl` components crash without an intl context in the tree.
 const App = () => (
   <BrowserRouter>
-    <MuiThemeProvider theme={theme}>
-      <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => <LocaleApp language={defaultLanguage} />}
-        />
-        <Route
-          exact
-          path="/pt/cv.html"
-          render={() => <LocaleApp language="pt" />}
-        />
-        <Route
-          exact
-          path="/de/lebenslauf.html"
-          render={() => <LocaleApp language="de" />}
-        />
-        <Route
-          exact
-          path="/en/resume.html"
-          render={() => <LocaleApp language="en" />}
-        />
-        <Route
-          exact
-          path="/it/curriculum.html"
-          render={() => <LocaleApp language="it" />}
-        />
-        <Route component={NotFound} />
-      </Switch>
-    </MuiThemeProvider>
+    <Route
+      render={({ location }) => {
+        const language = languageByPath[location.pathname] || defaultLanguage;
+
+        return (
+          <IntlProvider
+            locale={language}
+            key={language}
+            messages={languages[language]}
+          >
+            <MuiThemeProvider theme={theme}>
+              <div className="App">
+                <Meta locale={language} />
+                <Route path="/" component={Analytics} />
+                <Switch>
+                  <Route
+                    exact
+                    path="/"
+                    render={() => <ResumeScreen language={language} />}
+                  />
+                  <Route
+                    exact
+                    path="/pt"
+                    render={() => <ResumeScreen language="pt" />}
+                  />
+                  <Route
+                    exact
+                    path="/pt/cv.html"
+                    render={() => <ResumeScreen language="pt" />}
+                  />
+                  <Route
+                    exact
+                    path="/de"
+                    render={() => <ResumeScreen language="de" />}
+                  />
+                  <Route
+                    exact
+                    path="/de/lebenslauf.html"
+                    render={() => <ResumeScreen language="de" />}
+                  />
+                  <Route
+                    exact
+                    path="/en"
+                    render={() => <ResumeScreen language="en" />}
+                  />
+                  <Route
+                    exact
+                    path="/en/resume.html"
+                    render={() => <ResumeScreen language="en" />}
+                  />
+                  <Route
+                    exact
+                    path="/it"
+                    render={() => <ResumeScreen language="it" />}
+                  />
+                  <Route
+                    exact
+                    path="/it/curriculum.html"
+                    render={() => <ResumeScreen language="it" />}
+                  />
+                  <Route component={NotFound} />
+                </Switch>
+              </div>
+            </MuiThemeProvider>
+          </IntlProvider>
+        );
+      }}
+    />
   </BrowserRouter>
 );
 

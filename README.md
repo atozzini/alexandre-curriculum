@@ -1,9 +1,20 @@
 ## My resume
 
-My resume in portuguese, english and german, developed with React.
+My resume, developed with React.
 
-## Build docker image
-docker build -t alexandre-tozzini/resume .
+## Local development
+yarn install
+yarn start
 
-## Run a container on port 8018
-docker run -p 8018:80 alexandre-tozzini/resume:latest
+## Build
+yarn build
+
+## Deploy
+Deployed via AWS Amplify Hosting, which builds and serves the `build/` output
+directly (see `amplify.yml`). Since this is a client-side routed SPA
+(`react-router-dom`), add a rewrite rule in the Amplify console so unknown
+paths fall back to `index.html`:
+
+| Source address | Target address | Type |
+|---|---|---|
+| `/<*>` | `/index.html` | 200 (Rewrite) |
