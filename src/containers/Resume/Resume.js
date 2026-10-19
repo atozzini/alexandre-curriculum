@@ -94,6 +94,7 @@ class Resume extends Component {
         <ResumeAboutMeBlock
           fullName={fullName}
           headline={this.props.headline}
+          mainAddress={this.props.mainAddress}
           summary={this.props.summary}
           pictureUrl={this.props.pictureUrl}
           resumeUrl={cv}
@@ -134,6 +135,7 @@ Resume.propTypes = {
   lastNameKana: PropTypes.string,
   emailAddress: PropTypes.string,
   headline: PropTypes.string,
+  mainAddress: PropTypes.string,
   summary: PropTypes.string,
   pictureUrl: PropTypes.string,
   snsAccounts: PropTypes.arrayOf(PropTypes.object),

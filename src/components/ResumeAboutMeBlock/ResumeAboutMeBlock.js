@@ -11,6 +11,7 @@ const ResumeAboutMeBlock = ({
   style,
   fullName,
   headline,
+  mainAddress,
   summary,
   pictureUrl,
   resumeUrl,
@@ -45,6 +46,9 @@ const ResumeAboutMeBlock = ({
           <div className="ResumeAboutMeBlock-description">
             <h3>{fullName}</h3>
             <h4>{headline}</h4>
+            {mainAddress && (
+              <p className="ResumeAboutMeBlock-location">{mainAddress}</p>
+            )}
 
             <p
               className="Resume-summary"
@@ -90,6 +94,7 @@ ResumeAboutMeBlock.propTypes = {
   style: PropTypes.object,
   fullName: PropTypes.string.isRequired,
   headline: PropTypes.string.isRequired,
+  mainAddress: PropTypes.string,
   summary: PropTypes.string.isRequired,
   pictureUrl: PropTypes.string.isRequired,
   resumeUrl: PropTypes.string.isRequired,
