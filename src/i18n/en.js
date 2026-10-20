@@ -4,7 +4,7 @@ export default {
     aboutMe: 'About me',
     aboutMeSubtitle: 'A short introduction about myself',
     download: 'Resume',
-    hireMe: 'Hire me',
+    hireMe: 'Get in touch',
     workExperienceAndEducation: 'Work experience & Education',
     workExperienceAndEducationSubtitle:
       'My work experiences and academic background.',

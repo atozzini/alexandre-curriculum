@@ -4,7 +4,7 @@ export default {
     aboutMe: 'Über mich',
     aboutMeSubtitle: 'Eine kurze Einführung über mich',
     download: 'Lebenslauf',
-    hireMe: 'Einstellen',
+    hireMe: 'Kontaktiere mich',
     workExperienceAndEducation: 'Berufserfahrung und Ausbildung',
     workExperienceAndEducationSubtitle:
       'Meine bisherigen Berufserfahrungen und akademischen Ausbildungen.',
