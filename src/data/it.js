@@ -340,6 +340,7 @@ export default {
     {
       schoolName: 'UNASP',
       fieldOfStudy: 'Ingegneria Civile (incompleto)',
+      picture: 'logo-unasp.jpeg',
       startDate: '2007',
       endDate: '2010',
       degree: 'Laurea',

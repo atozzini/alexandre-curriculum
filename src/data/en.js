@@ -326,6 +326,7 @@ export default {
     {
       schoolName: 'UNASP',
       fieldOfStudy: 'Civil Engineering (incomplete)',
+      picture: 'logo-unasp.jpeg',
       startDate: '2007',
       endDate: '2010',
       degree: 'Undergraduate',

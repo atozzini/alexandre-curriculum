@@ -342,6 +342,7 @@ export default {
     {
       schoolName: 'UNASP',
       fieldOfStudy: 'Bauingenieurwesen (nicht abgeschlossen)',
+      picture: 'logo-unasp.jpeg',
       startDate: '2007',
       endDate: '2010',
       degree: 'Bachelor',
