@@ -36,4 +36,17 @@ export default {
     languages: 'Sprachen',
     hobbies: 'Hobbys',
   },
+  ContactModal: {
+    title: 'Schreib mir eine Nachricht',
+    name: 'Name',
+    email: 'E-Mail',
+    phone: 'Telefon (optional)',
+    message: 'Nachricht',
+    cancel: 'Abbrechen',
+    send: 'Senden',
+    missingFields: 'Bitte Name, E-Mail und Nachricht ausfüllen.',
+    genericError: 'Etwas ist schiefgelaufen. Bitte versuche es erneut.',
+    successMessage: 'Nachricht gesendet! Ich melde mich bald bei dir.',
+    recaptchaNotice: 'Diese Seite ist durch reCAPTCHA geschützt.',
+  },
 };

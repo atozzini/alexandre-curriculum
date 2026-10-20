@@ -1,0 +1,56 @@
+.ContactModal .grecaptcha-badge {
+    visibility: hidden;
+}
+
+.ContactModal-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 12px;
+}
+
+.ContactModal-title h3 {
+    margin: 0;
+}
+
+.ContactModal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ContactModal-error {
+    display: flex;
+    align-items: center;
+    color: #f44336;
+    font-size: 14px;
+    margin: 4px 0 0;
+}
+
+.ContactModal-error svg {
+    margin-right: 6px;
+}
+
+.ContactModal-recaptchaNotice {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 16px;
+}
+
+.ContactModal-feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 0;
+}
+
+.ContactModal-successIcon {
+    font-size: 48px;
+    color: #4caf50;
+    margin-bottom: 12px;
+}
+
+.ContactModal-spinner {
+    margin-right: 8px;
+    color: #fff;
+}

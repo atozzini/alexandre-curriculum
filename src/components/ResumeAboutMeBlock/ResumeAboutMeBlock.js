@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { FormattedMessage } from 'react-intl';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
+import ContactModal from '../../components/ContactModal/ContactModal';
 
 import './ResumeAboutMeBlock.css';
 
@@ -16,6 +17,8 @@ const ResumeAboutMeBlock = ({
   pictureUrl,
   resumeUrl,
 }) => {
+  const [isContactModalOpen, setContactModalOpen] = useState(false);
+
   let pictureSrc = pictureUrl;
   if (!/^https?:\/\//i.test(pictureUrl)) {
     pictureSrc = pictureUrl.startsWith('/img/')
@@ -72,7 +75,7 @@ const ResumeAboutMeBlock = ({
               </Button>
               &nbsp;&nbsp;&nbsp;
               <Button
-                href="mailto:tozzini@proton.me"
+                onClick={() => setContactModalOpen(true)}
                 variant="contained"
                 color="secondary"
               >
@@ -86,6 +89,11 @@ const ResumeAboutMeBlock = ({
           </div>
         </div>
       </div>
+
+      <ContactModal
+        open={isContactModalOpen}
+        onClose={() => setContactModalOpen(false)}
+      />
     </ScreenBlock>
   );
 };

@@ -36,4 +36,17 @@ export default {
     languages: 'Languages',
     hobbies: 'Hobbies',
   },
+  ContactModal: {
+    title: 'Send me a message',
+    name: 'Name',
+    email: 'Email',
+    phone: 'Phone (optional)',
+    message: 'Message',
+    cancel: 'Cancel',
+    send: 'Send',
+    missingFields: 'Please fill in name, email and message.',
+    genericError: 'Something went wrong. Please try again.',
+    successMessage: "Message sent! I'll get back to you soon.",
+    recaptchaNotice: 'This site is protected by reCAPTCHA.',
+  },
 };

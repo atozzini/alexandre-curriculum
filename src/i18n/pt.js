@@ -36,4 +36,17 @@ export default {
     languages: 'Idiomas',
     hobbies: 'Hobbies',
   },
+  ContactModal: {
+    title: 'Envie uma mensagem',
+    name: 'Nome',
+    email: 'E-mail',
+    phone: 'Telefone (opcional)',
+    message: 'Mensagem',
+    cancel: 'Cancelar',
+    send: 'Enviar',
+    missingFields: 'Preencha nome, e-mail e mensagem.',
+    genericError: 'Algo deu errado. Tente novamente.',
+    successMessage: 'Mensagem enviada! Em breve entro em contato.',
+    recaptchaNotice: 'Este site é protegido por reCAPTCHA.',
+  },
 };
