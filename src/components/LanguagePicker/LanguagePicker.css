@@ -1,1 +1,23 @@
-.LanguagePicker {}
+.LanguagePicker {
+    display: flex;
+    align-items: center;
+}
+
+.LanguagePicker-shortName {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .LanguagePicker-button {
+        min-width: auto;
+        padding: 6px 10px;
+    }
+
+    .LanguagePicker-fullName {
+        display: none;
+    }
+
+    .LanguagePicker-shortName {
+        display: inline;
+    }
+}

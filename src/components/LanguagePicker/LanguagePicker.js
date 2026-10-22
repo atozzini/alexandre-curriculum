@@ -14,7 +14,10 @@ const LanguagePicker = () => (
         component={Link}
         to={`/${language.url}.html`}
       >
-        {language.name}
+        <span className="LanguagePicker-fullName">{language.name}</span>
+        <span className="LanguagePicker-shortName">
+          {language.value.toUpperCase()}
+        </span>
       </Button>
     ))}
   </div>
